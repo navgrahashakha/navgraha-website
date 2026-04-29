@@ -175,19 +175,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="newsletter-section">
   <h2>✦ Join the Cosmic Letters</h2>
   <p>Monthly musings on astrology and tarot — delivered to your inbox around the new moon.</p>
-  <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-    <input type="email" placeholder="your@email.com" required>
-    <button type="submit">Subscribe</button>
+  <form class="newsletter-form"
+    action="https://navgrahashakha.us9.list-manage.com/subscribe/post?u=e2cb6d4204c7d3c460ecbc35c&amp;id=d8b04f69fc&amp;f_id=0023e1e3f0"
+    method="post"
+    target="_blank">
+    <input type="email" name="EMAIL" placeholder="your@email.com" required>
+    <input type="hidden" name="b_e2cb6d4204c7d3c460ecbc35c_d8b04f69fc" value="" style="display:none" tabindex="-1" aria-hidden="true">
+    <button type="submit" name="subscribe">Subscribe</button>
   </form>
-  <p id="nl-success" style="display:none;margin-top:1rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--lavender);">You're in ✦ Watch for the next new moon letter.</p>
 </div>
 
 <script>
-function handleNewsletter(e) {
-  e.preventDefault();
-  document.getElementById('nl-success').style.display = 'block';
-  e.target.querySelector('input').value = '';
-}
+// Newsletter handled by Mailchimp
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {

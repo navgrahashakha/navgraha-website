@@ -94,19 +94,18 @@ function getNewsletterBar() {
     <h3>✦ Cosmic Letters</h3>
     <p>Monthly astrology &amp; tarot musings — arriving around the new moon.</p>
   </div>
-  <form class="newsletter-bar-form" onsubmit="handleNLBar(event)">
-    <input type="email" placeholder="your@email.com" required>
-    <button type="submit">Subscribe</button>
+  <form class="newsletter-bar-form"
+    action="https://navgrahashakha.us9.list-manage.com/subscribe/post?u=e2cb6d4204c7d3c460ecbc35c&amp;id=d8b04f69fc&amp;f_id=0023e1e3f0"
+    method="post"
+    target="_blank">
+    <input type="email" name="EMAIL" placeholder="your@email.com" required>
+    <input type="hidden" name="b_e2cb6d4204c7d3c460ecbc35c_d8b04f69fc" value="" style="display:none" tabindex="-1" aria-hidden="true">
+    <button type="submit" name="subscribe">Subscribe</button>
   </form>
-  <p class="newsletter-success" id="nlBarSuccess" style="display:none;">You're in ✦ See you at the new moon.</p>
 </div>`;
 }
 
-function handleNLBar(e) {
-  e.preventDefault();
-  document.getElementById('nlBarSuccess').style.display = 'block';
-  e.target.style.display = 'none';
-}
+// Newsletter handled by Mailchimp
 
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
