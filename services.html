@@ -19,26 +19,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
 .service-card {
-  background: rgba(58,18,96,0.85); border: 1px solid rgba(107,47,160,0.15);
+  background: rgba(58,18,96,0.85); border: 1px solid rgba(255,255,255,0.15);
   padding: 2.5rem 2rem; transition: all 0.3s;
   box-shadow: none;
   display: flex; flex-direction: column;
 }
-.service-card:hover { border-color: rgba(107,47,160,0.25); transform: translateY(-3px); box-shadow: none; }
+.service-card:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-3px); box-shadow: none; }
 .service-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
 .service-name {
-  font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 600;
+  font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 600;
   letter-spacing: 0.05em; color: var(--ink); margin-bottom: 0.8rem;
 }
 .service-desc {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.38rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
   line-height: 1.85; color: var(--ink-dim); margin-bottom: 1.2rem; flex: 1;
 }
 .service-includes {
   list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;
 }
 .service-includes li {
-  font-size: 0.9rem; color: var(--ink-dim); padding-left: 1.2rem;
+  font-size: 1rem; color: var(--ink-dim); padding-left: 1.2rem;
   position: relative; letter-spacing: 0.03em;
 }
 .service-includes li::before { content: '✦'; position: absolute; left: 0; color: var(--lavender-soft); font-size: 0.55rem; top: 0.2rem; }
@@ -48,10 +48,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .service-tag {
   font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-  padding: 0.3rem 0.8rem; border: 1px solid rgba(107,47,160,0.2); color: var(--gold);
+  padding: 0.3rem 0.8rem; border: 1px solid rgba(255,255,255,0.2); color: var(--gold);
   background: rgba(196,176,232,0.05);
 }
-.service-duration { font-size: 0.92rem; letter-spacing: 0.08em; color: var(--ink-faint); margin-left: auto; }
+.service-duration { font-size: 1.5rem; letter-spacing: 0.08em; color: var(--ink-faint); margin-left: auto; }
 
 .how-section { background: var(--surface); padding: 6rem 2rem; position: relative; z-index: 1; }
 .how-steps { max-width: 900px; margin: 3rem auto 0; display: flex; flex-direction: column; }
@@ -62,13 +62,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .how-step:last-child { border-bottom: none; }
 .step-num {
   font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 700;
-  color: rgba(107,47,160,0.18); line-height: 1;
+  color: rgba(255,255,255,0.18); line-height: 1;
 }
 .step-content h3 {
-  font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 600;
+  font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 600;
   letter-spacing: 0.05em; color: var(--ink); margin-bottom: 0.6rem;
 }
-.step-content p { font-family: 'Cormorant Garamond', serif; font-size: 1.38rem; line-height: 1.8; color: var(--ink-dim); }
+.step-content p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; line-height: 1.8; color: var(--ink-dim); }
 
 .testimonials-section { padding: 6rem 2rem; position: relative; z-index: 1; }
 .testimonials-grid {
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
 .testimonial-card {
-  background: rgba(58,18,96,0.85); border: 1px solid rgba(107,47,160,0.15);
+  background: rgba(58,18,96,0.85); border: 1px solid rgba(255,255,255,0.15);
   padding: 2rem 1.5rem; position: relative;
   box-shadow: none;
 }
@@ -85,12 +85,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   color: var(--lavender-faint); opacity: 0.5;
   position: absolute; top: -0.5rem; left: 1rem; line-height: 1;
 }
-.stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.2rem; margin-bottom: 1rem; display: block; }
+.stars { color: var(--gold); font-size: 1rem; letter-spacing: 0.2rem; margin-bottom: 1rem; display: block; }
 .testimonial-text {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.38rem; font-style: italic;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic;
   line-height: 1.8; color: var(--ink-dim); margin-bottom: 1.2rem;
 }
-.testimonial-author { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.testimonial-author { font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
 
 @media(max-width:900px){
   .services-grid { grid-template-columns: 1fr; }
@@ -113,7 +113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="page-subtitle">Each session is a sacred space for clarity, insight, and cosmic alignment.</p>
 </div>
 
-<section style="background:rgba(52,16,88,0.5);padding:6rem 2rem;position:relative;z-index:1;">
+<section style="background:rgba(80,28,128,0.4);padding:6rem 2rem;position:relative;z-index:1;">
   <div class="services-grid">
     <div class="service-card fade-in">
       <span class="service-icon">☉</span>
@@ -208,7 +208,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- Gift sessions note -->
-  <div style="max-width:1100px;margin:3rem auto 0;padding:2rem;background:var(--surface);border:1px solid rgba(107,47,160,0.15);display:flex;align-items:center;gap:1.5rem;">
+  <div style="max-width:1100px;margin:3rem auto 0;padding:2rem;background:var(--surface);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;gap:1.5rem;">
     <span style="font-size:2rem;flex-shrink:0;">🎁</span>
     <div>
       <div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;letter-spacing:0.05em;color:var(--ink);margin-bottom:0.4rem;">Gift a Session</div>
