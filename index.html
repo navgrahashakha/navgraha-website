@@ -27,9 +27,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   transform: translate(-50%, -50%);
   animation: spin 80s linear infinite; pointer-events: none;
 }
-.mandala-ring:nth-child(1) { width: 620px; height: 620px; border: 1px solid rgba(201,168,76,0.08); }
-.mandala-ring:nth-child(2) { width: 460px; height: 460px; border: 1px solid rgba(201,168,76,0.2); animation-duration: 55s; animation-direction: reverse; }
-.mandala-ring:nth-child(3) { width: 300px; height: 300px; border: 1px solid rgba(201,168,76,0.22); animation-duration: 40s; }
+.mandala-ring:nth-child(1) { width: 620px; height: 620px; border: 1px solid rgba(212,168,64,0.08); }
+.mandala-ring:nth-child(2) { width: 460px; height: 460px; border: 1px solid rgba(212,168,64,0.2); animation-duration: 55s; animation-direction: reverse; }
+.mandala-ring:nth-child(3) { width: 300px; height: 300px; border: 1px solid rgba(212,168,64,0.22); animation-duration: 40s; }
 @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
 
 .hero-symbol { font-size: 2.8rem; margin-bottom: 2rem; animation: float 6s ease-in-out infinite; position: relative; z-index: 2; }
@@ -47,7 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .hero-divider {
   width: 100px; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212,168,64,0.3), transparent);
   margin: 2rem auto; position: relative; z-index: 2;
 }
 .hero-tagline {
@@ -62,8 +62,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .pill {
   font-size: 0.76rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
-  padding: 0.45rem 1.1rem; border: 1px solid rgba(201,168,76,0.28);
-  color: var(--lavender); border-radius: 999px; background: rgba(201,168,76,0.05);
+  padding: 0.45rem 1.1rem; border: 1px solid rgba(212,168,64,0.28);
+  color: var(--lavender); border-radius: 999px; background: rgba(212,168,64,0.05);
 }
 .hero-buttons {
   display: flex; flex-wrap: wrap; gap: 1rem;
@@ -88,8 +88,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* Intro strip */
 .intro-strip {
-  background: var(--surface); border-top: 1px solid rgba(201,168,76,0.18);
-  border-bottom: 1px solid rgba(201,168,76,0.18); padding: 4rem 2rem; position: relative; z-index: 1;
+  background: var(--surface); border-top: 1px solid rgba(212,168,64,0.18);
+  border-bottom: 1px solid rgba(212,168,64,0.18); padding: 4rem 2rem; position: relative; z-index: 1;
 }
 .intro-strip-inner {
   max-width: 1100px; margin: 0 auto;
@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .intro-item .icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
 .intro-item h3 {
-  font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600;
+  font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 600;
   letter-spacing: 0.06em; color: var(--ink); margin-bottom: 0.6rem;
 }
 .intro-item p { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; color: var(--ink-dim); line-height: 1.7; }
@@ -111,17 +111,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
 .svc-card {
-  background: rgba(49,20,102,0.85); border: 1px solid rgba(201,168,76,0.18);
+  background: rgba(58,18,96,0.85); border: 1px solid rgba(212,168,64,0.18);
   padding: 2.5rem 2rem; transition: all 0.3s;
   box-shadow: none;
 }
-.svc-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); box-shadow: none; }
+.svc-card:hover { border-color: rgba(212,168,64,0.3); transform: translateY(-3px); box-shadow: none; }
 .svc-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
 .svc-name {
-  font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 600;
+  font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 600;
   letter-spacing: 0.05em; color: var(--ink); margin-bottom: 0.8rem;
 }
-.svc-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.75; color: var(--ink-dim); }
+.svc-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; line-height: 1.75; color: var(--ink-dim); }
 .svc-link {
   display: inline-block; margin-top: 1.2rem; font-size: 0.7rem;
   letter-spacing: 0.2em; text-transform: uppercase; color: var(--lavender);
@@ -137,15 +137,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .blog-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .blog-card {
-  background: rgba(49,20,102,0.85); border: 1px solid rgba(201,168,76,0.18);
+  background: rgba(58,18,96,0.85); border: 1px solid rgba(212,168,64,0.18);
   overflow: hidden; transition: all 0.3s;
   box-shadow: none;
 }
-.blog-card:hover { border-color: rgba(201,168,76,0.28); box-shadow: none; }
+.blog-card:hover { border-color: rgba(212,168,64,0.28); box-shadow: none; }
 .blog-card-img {
   width: 100%; aspect-ratio: 16/9; background: var(--surface2);
   display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
-  border-bottom: 1px solid rgba(201,168,76,0.08);
+  border-bottom: 1px solid rgba(212,168,64,0.08);
 }
 .blog-card-body { padding: 1.8rem; }
 .blog-tag {
@@ -157,12 +157,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   letter-spacing: 0.03em; color: var(--ink); line-height: 1.55; margin-bottom: 0.8rem;
 }
 .blog-excerpt {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
   line-height: 1.75; color: var(--ink-dim); margin-bottom: 1.2rem;
 }
 .blog-footer {
   display: flex; align-items: center; justify-content: space-between;
-  padding-top: 1rem; border-top: 1px solid rgba(201,168,76,0.08);
+  padding-top: 1rem; border-top: 1px solid rgba(212,168,64,0.08);
 }
 .blog-meta { font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ink-faint); }
 .blog-read-more {
@@ -174,8 +174,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* CTA band */
 .cta-band {
-  background: var(--surface2); border-top: 1px solid rgba(201,168,76,0.18);
-  border-bottom: 1px solid rgba(201,168,76,0.18);
+  background: var(--surface2); border-top: 1px solid rgba(212,168,64,0.18);
+  border-bottom: 1px solid rgba(212,168,64,0.18);
   padding: 5rem 2rem; text-align: center; position: relative; z-index: 1;
 }
 .cta-band h2 {

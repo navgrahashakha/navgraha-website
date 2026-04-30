@@ -19,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   position: relative;
   padding: 10rem 2rem 6rem;
   z-index: 1;
-  border-bottom: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(212,168,64,0.15);
   overflow: hidden;
 }
 .about-hero::before {
@@ -39,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   width: 100%;
   aspect-ratio: 3/4;
   overflow: hidden;
-  border: 1px solid rgba(201,168,76,0.25);
+  border: 1px solid rgba(212,168,64,0.25);
 }
 .about-photo-frame img {
   width: 100%; height: 100%;
@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 /* Corner ornaments */
 .corner-tl, .corner-tr, .corner-bl, .corner-br {
   position: absolute; width: 28px; height: 28px;
-  border-color: rgba(201,168,76,0.55); z-index: 2;
+  border-color: rgba(212,168,64,0.55); z-index: 2;
 }
 .corner-tl { top: -8px; left: -8px; border-top: 1px solid; border-left: 1px solid; }
 .corner-tr { top: -8px; right: -8px; border-top: 1px solid; border-right: 1px solid; }
@@ -75,12 +75,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .about-stats {
   display: grid; grid-template-columns: repeat(3,1fr);
   gap: 0; margin-top: 1.5rem;
-  border: 1px solid rgba(201,168,76,0.18);
-  background: linear-gradient(135deg, rgba(49,20,102,0.7), rgba(37,16,80,0.8));
+  border: 1px solid rgba(212,168,64,0.18);
+  background: linear-gradient(135deg, rgba(58,18,96,0.75), rgba(42,13,80,0.85));
 }
 .stat-item {
   text-align: center; padding: 1.2rem 0.5rem;
-  border-right: 1px solid rgba(201,168,76,0.12);
+  border-right: 1px solid rgba(212,168,64,0.12);
 }
 .stat-item:last-child { border-right: none; }
 .stat-num {
@@ -130,9 +130,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .about-tag {
   font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
   padding: 0.4rem 1rem;
-  border: 1px solid rgba(201,168,76,0.25);
+  border: 1px solid rgba(212,168,64,0.25);
   color: var(--ink-dim);
-  background: rgba(201,168,76,0.04);
+  background: rgba(212,168,64,0.04);
 }
 
 /* ── STORY SECTION ── */
@@ -144,25 +144,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .story-block {
   display: grid; grid-template-columns: 80px 1fr;
   gap: 2.5rem; padding: 3rem 0;
-  border-bottom: 1px solid rgba(201,168,76,0.08);
+  border-bottom: 1px solid rgba(212,168,64,0.08);
   align-items: start;
 }
 .story-block:last-child { border-bottom: none; }
 .story-num {
   font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 700;
-  color: rgba(201,168,76,0.12); line-height: 1; text-align: center;
+  color: rgba(212,168,64,0.12); line-height: 1; text-align: center;
 }
 .story-symbol {
   font-size: 1.8rem; text-align: center;
   display: block; margin-top: 0.5rem;
 }
 .story-content h3 {
-  font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 600;
+  font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 600;
   letter-spacing: 0.05em; color: var(--gold);
   margin-bottom: 1rem;
 }
 .story-content p {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
   line-height: 1.95; color: var(--ink-dim);
 }
 .story-content p strong { color: var(--ink); font-weight: 600; }
@@ -170,8 +170,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 /* ── APPROACH SECTION ── */
 .approach-section {
   background: rgba(49,20,102,0.3);
-  border-top: 1px solid rgba(201,168,76,0.12);
-  border-bottom: 1px solid rgba(201,168,76,0.12);
+  border-top: 1px solid rgba(212,168,64,0.12);
+  border-bottom: 1px solid rgba(212,168,64,0.12);
   padding: 6rem 2rem; position: relative; z-index: 1;
 }
 .approach-grid {
@@ -179,28 +179,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
 }
 .approach-card {
-  background: linear-gradient(145deg, rgba(49,20,102,0.75), rgba(37,16,80,0.85));
-  border: 1px solid rgba(201,168,76,0.15);
+  background: linear-gradient(145deg, rgba(58,18,96,0.75), rgba(42,13,80,0.88));
+  border: 1px solid rgba(212,168,64,0.15);
   padding: 2.5rem 2rem; position: relative; transition: all 0.35s;
 }
 .approach-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212,168,64,0.4), transparent);
   opacity: 0; transition: opacity 0.35s;
 }
-.approach-card:hover { transform: translateY(-3px); border-color: rgba(201,168,76,0.32); }
+.approach-card:hover { transform: translateY(-3px); border-color: rgba(212,168,64,0.32); }
 .approach-card:hover::before { opacity: 1; }
 .approach-num {
   font-family: 'Cinzel', serif; font-size: 2.8rem; font-weight: 700;
-  color: rgba(201,168,76,0.1); margin-bottom: 0.8rem; display: block; line-height: 1;
+  color: rgba(212,168,64,0.1); margin-bottom: 0.8rem; display: block; line-height: 1;
 }
 .approach-card h3 {
   font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600;
   letter-spacing: 0.06em; color: var(--ink); margin-bottom: 0.8rem;
 }
 .approach-card p {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
   line-height: 1.85; color: var(--ink-dim);
 }
 
@@ -214,10 +214,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   display: flex; align-items: center; gap: 1.2rem;
   padding: 1.2rem 1.5rem;
   background: linear-gradient(135deg, rgba(49,20,102,0.5), rgba(37,16,80,0.6));
-  border: 1px solid rgba(201,168,76,0.15);
+  border: 1px solid rgba(212,168,64,0.15);
   transition: all 0.3s;
 }
-.lineage-item:hover { border-color: rgba(201,168,76,0.35); }
+.lineage-item:hover { border-color: rgba(212,168,64,0.35); }
 .lineage-icon { font-size: 1.6rem; flex-shrink: 0; }
 .lineage-item h4 {
   font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600;
@@ -227,21 +227,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* ── CTA ── */
 .about-cta {
-  background: linear-gradient(135deg, rgba(49,20,102,0.95), rgba(37,16,80,1));
-  border-top: 1px solid rgba(201,168,76,0.2);
+  background: linear-gradient(135deg, rgba(49,20,102,0.95), rgba(42,13,80,1));
+  border-top: 1px solid rgba(212,168,64,0.2);
   padding: 5rem 2rem; text-align: center; position: relative; z-index: 1;
 }
 .about-cta::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212,168,64,0.5), transparent);
 }
 .about-cta h2 {
   font-family: 'Cinzel', serif; font-size: clamp(1.4rem,3vw,2.2rem);
   font-weight: 600; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 1rem;
 }
 .about-cta p {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
   font-style: italic; color: var(--ink-dim); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto;
 }
 .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -379,9 +379,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="approach-section">
   <div style="max-width:1100px;margin:0 auto;">
     <div style="font-size:0.65rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;">
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.5));display:block;"></span>
+      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,64,0.5));display:block;"></span>
       How I Work
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.5),transparent);display:block;"></span>
+      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,rgba(212,168,64,0.5),transparent);display:block;"></span>
     </div>
     <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:600;letter-spacing:0.05em;color:var(--ink);margin-bottom:0;">My Approach</h2>
   </div>
@@ -408,9 +408,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="lineages-section">
   <div style="max-width:900px;margin:0 auto;">
     <div style="font-size:0.65rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;">
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.5));display:block;"></span>
+      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,64,0.5));display:block;"></span>
       Foundations
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.5),transparent);display:block;"></span>
+      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,rgba(212,168,64,0.5),transparent);display:block;"></span>
     </div>
     <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:600;letter-spacing:0.05em;color:var(--ink);margin-bottom:0.8rem;">Influences &amp; Lineages</h2>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink-dim);margin-bottom:0;">The traditions and systems that have shaped my practice.</p>
