@@ -92,10 +92,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .testimonial-author { font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
 
+.price-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  gap: 1rem;
+}
+.price-row:last-child { border-bottom: none; }
+.price-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ink-dim); line-height: 1.4; }
+.price-amt { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: var(--gold); white-space: nowrap; }
+
 @media(max-width:900px){
   .services-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .how-step { grid-template-columns: 60px 1fr; gap: 1.2rem; }
+  .pricing-grid { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
@@ -218,6 +228,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ── PRICING ── -->
+<section style="background:var(--deep);padding:6rem 2rem;position:relative;z-index:1;">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-eyebrow" style="justify-content:center;">Transparent Pricing</div>
+    <h2 class="section-title" style="text-align:center;">Session Rates</h2>
+    <p class="section-subtitle" style="text-align:center;margin:0 auto 3.5rem;">All sessions are held online via Zoom or Google Meet. Payment details are shared upon booking confirmation.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="pricing-grid">
+
+      <!-- Vedic Astrology -->
+      <div style="background:rgba(58,18,96,0.85);border:1px solid rgba(255,255,255,0.15);padding:2.5rem 2rem;">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(212,168,64,0.3);">
+          <span style="font-size:1.6rem;">☉</span>
+          <div style="font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;letter-spacing:0.05em;color:var(--gold);">Vedic Astrology</div>
+        </div>
+
+        <div style="margin-bottom:1.8rem;">
+          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">15 Minute Sessions</div>
+          <div class="price-row">
+            <span class="price-name">Mini Reading · Ask 1 Question</span>
+            <span class="price-amt">₹149</span>
+          </div>
+          <div class="price-row">
+            <span class="price-name">Mini Reading · Ask 2 Questions</span>
+            <span class="price-amt">₹249</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1.8rem;">
+          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">45 Minute Sessions</div>
+          <div class="price-row">
+            <span class="price-name">Full Birth Chart Reading</span>
+            <span class="price-amt">₹999</span>
+          </div>
+          <div class="price-row">
+            <span class="price-name">Karmic Soul Reading</span>
+            <span class="price-amt">₹1,099</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">60 Minute Sessions</div>
+          <div class="price-row">
+            <span class="price-name">Relationship Compatibility Reading</span>
+            <span class="price-amt">₹1,299</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarot -->
+      <div style="background:rgba(58,18,96,0.85);border:1px solid rgba(255,255,255,0.15);padding:2.5rem 2rem;">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(212,168,64,0.3);">
+          <span style="font-size:1.6rem;">☽</span>
+          <div style="font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;letter-spacing:0.05em;color:var(--gold);">Tarot Card Reading</div>
+        </div>
+
+        <div style="margin-bottom:1.8rem;">
+          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">30 Minute Session</div>
+          <div class="price-row">
+            <span class="price-name">Tarot Reading</span>
+            <span class="price-amt">₹299</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">60 Minute Session</div>
+          <div class="price-row">
+            <span class="price-name">Tarot Reading</span>
+            <span class="price-amt">₹499</span>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink-faint);line-height:1.7;">All readings include a follow-up Q&amp;A window via WhatsApp within 24 hours of the session.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="contact.html" class="btn-primary">Book a Session</a>
+    </div>
+  </div>
+</section>
+
 <div class="how-section">
   <div style="max-width:900px;margin:0 auto;">
     <div class="section-eyebrow">The Process</div>
@@ -261,20 +356,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title" style="text-align:center;">What Clients Say</h2>
   </div>
   <div class="testimonials-grid">
-    <div class="testimonial-card fade-in">
+    <div class="testimonial-card fade-in" style="opacity:0.55;border-style:dashed;">
       <span class="stars">★★★★★</span>
-      <p class="testimonial-text">Rushali's birth chart reading was so deeply accurate. She combined astrological depth with such clarity and warmth. I felt truly seen.</p>
-      <span class="testimonial-author">— Priya M., Mumbai</span>
+      <p class="testimonial-text" style="font-style:normal;color:var(--ink-faint);">[Client testimonial coming soon — replace this with a real quote]</p>
+      <span class="testimonial-author" style="color:var(--ink-faint);">— Client Name, City</span>
     </div>
-    <div class="testimonial-card fade-in">
+    <div class="testimonial-card fade-in" style="opacity:0.55;border-style:dashed;">
       <span class="stars">★★★★★</span>
-      <p class="testimonial-text">The tarot session helped me see a situation I had been avoiding for months. Rushali holds space with warmth and incredible intuition.</p>
-      <span class="testimonial-author">— Ananya R., Bangalore</span>
+      <p class="testimonial-text" style="font-style:normal;color:var(--ink-faint);">[Client testimonial coming soon — replace this with a real quote]</p>
+      <span class="testimonial-author" style="color:var(--ink-faint);">— Client Name, City</span>
     </div>
-    <div class="testimonial-card fade-in">
+    <div class="testimonial-card fade-in" style="opacity:0.55;border-style:dashed;">
       <span class="stars">★★★★★</span>
-      <p class="testimonial-text">The relationship reading gave me so much clarity on patterns I had been repeating. Honest, compassionate, and genuinely helpful.</p>
-      <span class="testimonial-author">— Siddharth K., Delhi</span>
+      <p class="testimonial-text" style="font-style:normal;color:var(--ink-faint);">[Client testimonial coming soon — replace this with a real quote]</p>
+      <span class="testimonial-author" style="color:var(--ink-faint);">— Client Name, City</span>
     </div>
   </div>
   <div style="text-align:center;margin-top:3rem;">
