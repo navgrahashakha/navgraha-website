@@ -64,7 +64,7 @@ function getFooter() {
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Navgraha Shakha by Rushali Thukral · All Rights Reserved</span>
+    <span>© 2026 Navgraha Shakha by Rushali Thukral · All Rights Reserved</span>
     <a href="privacy.html">Privacy Policy</a>
   </div>
 </footer>`;
