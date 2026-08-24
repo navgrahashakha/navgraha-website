@@ -103,14 +103,9 @@
         headers: { Accept: 'application/json' },
       });
       if (response.ok) {
-        statusBox.hidden = false;
-        statusBox.className = 'form-status success';
-        statusBox.textContent =
-          "Message sent. You'll receive a confirmation email shortly — I'll respond within 24–48 hours.";
-        statusBox.setAttribute('role', 'status');
         form.reset();
-        form.hidden = true;
-        statusBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        window.location.href = 'thankyou.html';
+        return;
       } else {
         throw new Error('Request failed');
       }
