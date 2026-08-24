@@ -1,187 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KJWRKG2K');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Navgraha Shakha</title>
-<meta name="description" content="The Cosmic Journal — writings on Vedic astrology, tarot, and the art of living soul-first, by Rushali Thukral.">
-<meta property="og:title" content="The Cosmic Journal — Navgraha Shakha">
-<meta property="og:description" content="Reflections on astrology, tarot, and the art of living soul-first. Written by Rushali Thukral, Goa.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://navgrahashakha.com/blog.html">
-<meta property="og:image" content="https://navgrahashakha.com/rushali.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Cosmic Journal — Navgraha Shakha">
-<meta name="twitter:description" content="Reflections on astrology, tarot, and the art of living soul-first.">
-<meta name="twitter:image" content="https://navgrahashakha.com/rushali.jpg">
+<title>The Cosmic Journal — Navgraha Shakha</title>
+<meta name="description" content="Astrology, tarot, and spiritual coaching musings from Navgraha Shakha.">
 <link rel="stylesheet" href="style.css">
-<style>
-.blog-filters { max-width:1100px;margin:0 auto 3rem;display:flex;gap:0.8rem;flex-wrap:wrap; }
-.filter-btn {
-  font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
-  padding:0.45rem 1.1rem;border:1px solid rgba(255,255,255,0.2);
-  color:var(--ink-faint);background:none;cursor:pointer;transition:all 0.3s;
-}
-.filter-btn:hover, .filter-btn.active { border-color:var(--lavender);color:var(--lavender);background:rgba(80,28,128,0.3); }
-
-.blog-grid { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem; }
-.blog-card { background:rgba(58,18,96,0.85);border:1px solid rgba(255,255,255,0.15);overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(196,176,232,0.05); }
-.blog-card:hover { border-color:rgba(255,255,255,0.22);box-shadow:0 4px 20px rgba(107,47,160,0.08); }
-.blog-card[data-hidden="true"] { display:none; }
-.blog-card-img { width:100%;aspect-ratio:16/9;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:2.8rem;border-bottom:1px solid rgba(107,47,160,0.08); }
-.blog-card-body { padding:1.8rem;flex:1;display:flex;flex-direction:column; }
-.blog-tag { font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;display:block; }
-.blog-card-title { font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;letter-spacing:0.03em;color:var(--ink);line-height:1.55;margin-bottom:0.8rem; }
-.blog-excerpt { font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.75;color:var(--ink-dim);margin-bottom:1.2rem;flex:1; }
-.blog-footer { display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid rgba(107,47,160,0.08); }
-.blog-meta { font-size:0.68rem;letter-spacing:0.1em;color:var(--ink-faint); }
-.blog-read-more { font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--lavender);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.3s; }
-.blog-read-more:hover { border-color:var(--lavender); }
-
-.featured-post { max-width:1100px;margin:0 auto 4rem;display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(255,255,255,0.15);background:rgba(58,18,96,0.85);overflow:hidden;box-shadow:0 2px 16px rgba(107,47,160,0.05); }
-.featured-post-img { background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:5rem;min-height:300px;border-right:1px solid rgba(107,47,160,0.08); }
-.featured-post-body { padding:3rem; }
-.featured-label { font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block; }
-.featured-post-body h2 { font-family:'Cinzel',serif;font-size:1.3rem;font-weight:600;letter-spacing:0.04em;color:var(--ink);margin-bottom:1rem;line-height:1.4; }
-.featured-post-body p { font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.85;color:var(--ink-dim);margin-bottom:1.5rem; }
-.featured-post-meta { font-size:0.72rem;letter-spacing:0.12em;color:var(--ink-faint);margin-bottom:1.5rem; }
-
-.newsletter-section { background:var(--surface2);border-top:1px solid rgba(255,255,255,0.15);padding:5rem 2rem;text-align:center;position:relative;z-index:1;margin-top:6rem; }
-.newsletter-section h2 { font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:600;letter-spacing:0.05em;color:var(--ink);margin-bottom:0.8rem; }
-.newsletter-section p { font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink-dim);margin-bottom:2rem; }
-.newsletter-form { display:flex;max-width:480px;margin:0 auto; }
-.newsletter-form input { flex:1;background:rgba(58,18,96,0.85);border:1px solid rgba(255,255,255,0.18);border-right:none;color:var(--ink);padding:0.85rem 1.2rem;font-family:'Jost',sans-serif;font-size:0.9rem;font-weight:300;outline:none;transition:border-color 0.3s; }
-.newsletter-form input:focus { border-color:rgba(255,255,255,0.28); }
-.newsletter-form input::placeholder { color:var(--ink-faint); }
-.newsletter-form button { background:var(--lavender);color:var(--white);border:none;padding:0.85rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;white-space:nowrap; }
-.newsletter-form button:hover { background:var(--lavender-dim); }
-
-@media(max-width:900px){
-  .blog-grid { grid-template-columns:1fr; }
-  .featured-post { grid-template-columns:1fr; }
-  .featured-post-img { min-height:180px;border-right:none;border-bottom:1px solid rgba(107,47,160,0.08); }
-  .newsletter-form { flex-direction:column; }
-  .newsletter-form input { border-right:1px solid rgba(255,255,255,0.18);border-bottom:none; }
-}
-</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJWRKG2K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<script src="common.js"></script>
-<script>document.write(getNav('Blog'));</script>
 
-<div class="page-hero">
-  <div class="page-eyebrow">Writings &amp; Musings</div>
-  <h1 class="page-title">The Cosmic Journal</h1>
-  <p class="page-subtitle">Reflections on astrology, tarot, and the art of living soul-first.</p>
-</div>
-
-<section style="background:rgba(80,28,128,0.4);padding:6rem 2rem;position:relative;z-index:1;">
-
-  <div class="featured-post fade-in">
-    <div class="featured-post-img">☽</div>
-    <div class="featured-post-body">
-      <span class="featured-label">✦ Featured Post</span>
-      <h2>Understanding Your Moon Sign: The Hidden Emotional Self</h2>
-      <div class="featured-post-meta">Astrology · 8 min read</div>
-      <p>The Moon in your chart reveals how you feel, nurture, and find safety. While the Sun shows who you are becoming, the Moon shows who you already are — in the quiet, unguarded moments.</p>
-      <a href="blog-post.html" class="btn-secondary" style="display:inline-block;">Read the Full Post →</a>
-    </div>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="19" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.55"/>
+        <circle cx="30" cy="11" r="2.3" fill="currentColor"/>
+        <circle cx="42.21" cy="15.45" r="2.3" fill="currentColor"/>
+        <circle cx="48.71" cy="26.70" r="2.3" fill="currentColor"/>
+        <circle cx="46.45" cy="39.50" r="2.3" fill="currentColor"/>
+        <circle cx="36.50" cy="47.85" r="2.3" fill="currentColor"/>
+        <circle cx="23.50" cy="47.85" r="2.3" fill="currentColor"/>
+        <circle cx="13.55" cy="39.50" r="2.3" fill="currentColor"/>
+        <circle cx="11.29" cy="26.70" r="2.3" fill="currentColor"/>
+        <circle cx="17.79" cy="15.45" r="2.3" fill="currentColor"/>
+        <circle cx="30" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="1.5" fill="currentColor"/>
+        <path d="M30,21.5 L30,19 M38.5,30 L41,30 M30,38.5 L30,41 M21.5,30 L19,30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Navgraha Shakha</span>
+        <span class="brand-tag">ASTROLOGY · TAROT · SPIRITUAL COACHING</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Connect</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold nav-cta">Book a Session</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-
-  <div class="blog-filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="astrology">Astrology</button>
-    <button class="filter-btn" data-filter="tarot">Tarot</button>
-    <button class="filter-btn" data-filter="spirituality">Spirituality</button>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Connect</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold">Book a Session</a>
   </div>
+</nav>
 
-  <div class="blog-grid">
-    <div class="blog-card fade-in" data-category="astrology">
-      <div class="blog-card-img">☽</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Astrology</span>
-        <div class="blog-card-title">Understanding Your Moon Sign: The Hidden Emotional Self</div>
-        <p class="blog-excerpt">The Moon reveals how you feel, nurture, and find safety — in the quiet, unguarded moments.</p>
-        <div class="blog-footer">
-          <span class="blog-meta">8 min read</span>
-          <a href="blog-post.html" class="blog-read-more">Read More →</a>
-        </div>
-      </div>
+<section class="paper panel-tight" style="padding-top:4rem;">
+  <div class="wrap center" style="max-width:36rem;">
+    <span class="eyebrow">From the Cosmic Journal</span>
+    <h1 style="margin-top:0.6rem;">Latest Writings</h1>
+    <p class="dek">Astrology, tarot, and spiritual coaching musings — new posts arrive around the new moon.</p>
+  </div>
+</section>
+
+<section class="paper panel">
+  <div class="wrap">
+    <div class="blog-filter-bar">
+      <label for="blog-filter">Browse by</label>
+      <select id="blog-filter" class="blog-filter-select">
+        <option value="all">All Writings</option>
+        <option value="astrology">Vedic Astrology</option>
+        <option value="tarot">Tarot</option>
+        <option value="spiritual">Spiritual Guidance</option>
+      </select>
     </div>
-    <div class="blog-card fade-in" data-category="astrology">
-      <div class="blog-card-img">♄</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Astrology</span>
-        <div class="blog-card-title">Saturn Returns &amp; the Call to Grow Up Spiritually</div>
-        <p class="blog-excerpt">Why your Saturn Return is one of the most important initiations of adult life — and how to navigate it with grace.</p>
-        <div class="blog-footer">
-          <span class="blog-meta">Coming Soon</span>
-          <span class="blog-read-more" style="opacity:0.35;cursor:default;">Coming Soon</span>
+    <div class="grid grid-2" id="blog-grid" style="margin-top:2.5rem;">
+
+      <a class="arch-card" href="blog/understanding-your-moon-sign.html" data-category="astrology" style="color:inherit;text-decoration:none;">
+        <div class="arch-top">
+          <img src="images/illustrations/moonlight.svg" alt="Illustration of a figure under moonlight" loading="lazy">
         </div>
-      </div>
-    </div>
-    <div class="blog-card fade-in" data-category="astrology">
-      <div class="blog-card-img">✦</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Astrology</span>
-        <div class="blog-card-title">The Nodes of the Moon: Your Soul's Karmic Direction</div>
-        <p class="blog-excerpt">Rahu and Ketu — the shadow planets — hold the key to your soul's evolutionary path across lifetimes.</p>
-        <div class="blog-footer">
-          <span class="blog-meta">Coming Soon</span>
-          <span class="blog-read-more" style="opacity:0.35;cursor:default;">Coming Soon</span>
+        <div class="arch-body">
+          <span class="card-eyebrow">☽ Vedic Astrology</span>
+          <h3>Understanding Your Moon Sign: The Hidden Emotional Self</h3>
+          <p>The Moon reveals how you feel, nurture, and find safety, in the quiet, unguarded moments. This is where your emotional instincts live, shaped long before you had words for what you were feeling.</p>
+          <div class="arch-meta"><span>8 min read</span><span class="tag">Read More →</span></div>
         </div>
-      </div>
-    </div>
-    <div class="blog-card fade-in" data-category="tarot">
-      <div class="blog-card-img">🎴</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Tarot</span>
-        <div class="blog-card-title">Reading the Cards: How Tarot Speaks the Language of the Soul</div>
-        <p class="blog-excerpt">Tarot is not fortune-telling — it is a mirror. A way of hearing what the deeper self already knows.</p>
-        <div class="blog-footer">
-          <span class="blog-meta">Coming Soon</span>
-          <span class="blog-read-more" style="opacity:0.35;cursor:default;">Coming Soon</span>
+      </a>
+
+      <a class="arch-card" href="blog/saturn-returns.html" data-category="astrology" style="color:inherit;text-decoration:none;">
+        <div class="arch-top">
+          <img src="images/illustrations/stars.svg" alt="Illustration of a starry sky" loading="lazy">
         </div>
-      </div>
-    </div>
-    <div class="blog-card fade-in" data-category="tarot">
-      <div class="blog-card-img">🌙</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Tarot</span>
-        <div class="blog-card-title">The Major Arcana as a Map of the Soul's Journey</div>
-        <p class="blog-excerpt">From the Fool's leap of faith to the World's integration — the 22 Major Arcana as a journey of awakening.</p>
-        <div class="blog-footer">
-          <span class="blog-meta">Coming Soon</span>
-          <span class="blog-read-more" style="opacity:0.35;cursor:default;">Coming Soon</span>
+        <div class="arch-body">
+          <span class="card-eyebrow">♄ Vedic Astrology</span>
+          <h3>Saturn Returns &amp; the Call to Grow Up Spiritually</h3>
+          <p>Why your Saturn Return is one of the most important initiations of adult life, and how to navigate it with grace.</p>
+          <div class="arch-meta"><span>7 min read</span><span class="tag">Read More →</span></div>
         </div>
-      </div>
-    </div>
-    <div class="blog-card fade-in" data-category="spirituality">
-      <div class="blog-card-img">🌿</div>
-      <div class="blog-card-body">
-        <span class="blog-tag">Spirituality</span>
-        <div class="blog-card-title">Free Will &amp; Destiny: What Astrology Can and Cannot Tell You</div>
-        <p class="blog-excerpt">Your chart is a map, not a prison. Exploring the beautiful tension between cosmic timing and personal choice.</p>
-        <div class="blog-footer">
-          <span class="blog-meta">Coming Soon</span>
-          <span class="blog-read-more" style="opacity:0.35;cursor:default;">Coming Soon</span>
+      </a>
+
+      <a class="arch-card" href="blog/mercury-retrograde.html" data-category="astrology" style="color:inherit;text-decoration:none;">
+        <div class="arch-top">
+          <img src="images/illustrations/starry-window.svg" alt="Illustration of an astronaut floating among the stars" loading="lazy">
         </div>
-      </div>
+        <div class="arch-body">
+          <span class="card-eyebrow">☿ Vedic Astrology</span>
+          <h3>Mercury Retrograde: Separating Myth from Meaning</h3>
+          <p>Mercury retrograde gets blamed for everything. Here's what it actually does in your chart, and how to work with it.</p>
+          <div class="arch-meta"><span>5 min read</span><span class="tag">Read More →</span></div>
+        </div>
+      </a>
+
+      <a class="arch-card" href="blog/rahu-ketu-karmic-nodes.html" data-category="astrology" style="color:inherit;text-decoration:none;">
+        <div class="arch-top">
+          <img src="images/illustrations/astronomy.svg" alt="Illustration of figures carrying a large eclipsed moon" loading="lazy">
+        </div>
+        <div class="arch-body">
+          <span class="card-eyebrow">☊ Vedic Astrology</span>
+          <h3>Rahu &amp; Ketu: Understanding Your Karmic Nodes</h3>
+          <p>The lunar nodes map the pull between where you're meant to grow and what you're meant to release.</p>
+          <div class="arch-meta"><span>7 min read</span><span class="tag">Read More →</span></div>
+        </div>
+      </a>
+
+      <a class="arch-card" href="blog/reading-the-cards.html" data-category="tarot" style="color:inherit;text-decoration:none;">
+        <div class="arch-top">
+          <img src="images/illustrations/reading.svg" alt="Illustration of a figure reading with a magnifying glass" loading="lazy">
+        </div>
+        <div class="arch-body">
+          <span class="card-eyebrow">✦ Tarot</span>
+          <h3>Reading the Cards: How Tarot Speaks the Language of the Soul</h3>
+          <p>Tarot is not fortune-telling, it is a mirror: a way of hearing what the deeper self already knows.</p>
+          <div class="arch-meta"><span>6 min read</span><span class="tag">Read More →</span></div>
+        </div>
+      </a>
+
+      <a class="arch-card" href="blog/fools-journey-major-arcana.html" data-category="tarot" style="color:inherit;text-decoration:none;">
+        <div class="arch-top">
+          <img src="images/illustrations/playing-cards.svg" alt="Illustration of a hand of cards" loading="lazy">
+        </div>
+        <div class="arch-body">
+          <span class="card-eyebrow">✦ Tarot</span>
+          <h3>The Fool's Journey: What the Major Arcana Teaches About Growth</h3>
+          <p>The 22 cards of the Major Arcana tell one continuous story about becoming yourself.</p>
+          <div class="arch-meta"><span>7 min read</span><span class="tag">Read More →</span></div>
+        </div>
+      </a>
+
+      <a class="arch-card" href="blog/seven-chakras-guide.html" data-category="spiritual" style="color:inherit;text-decoration:none;">
+        <div class="arch-top">
+          <img src="images/illustrations/meditation.svg" alt="Illustration of a figure meditating" loading="lazy">
+        </div>
+        <div class="arch-body">
+          <span class="card-eyebrow">✧ Spiritual Guidance</span>
+          <h3>The 7 Chakras: A Beginner's Map to Your Energy Body</h3>
+          <p>A gentle introduction to the seven energy centres, what each one governs, and how to notice when one is asking for attention.</p>
+          <div class="arch-meta"><span>6 min read</span><span class="tag">Read More →</span></div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
 
-<script>document.write(getNewsletterBar() + getFooter() + getWhatsApp());</script>
+<section class="newsletter">
+  <div class="wrap">
+    <img src="images/illustrations/newsletter.svg" alt="" loading="lazy" style="width:100%;max-width:160px;margin:0 auto 1rem;">
+    <p class="eyebrow" style="color:var(--teal)">✦ Cosmic Letters</p>
+    <p style="color:var(--ink-dim);margin-top:0.6rem;">Monthly astrology &amp; tarot musings — arriving around the new moon.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/xwvyeqyp" method="POST">
+      <label for="newsletter-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+      <input type="email" id="newsletter-email" name="email" required placeholder="your@email.com">
+      <button type="submit" class="btn btn-gold">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;flex-shrink:0;color:var(--gold-light);">
+            <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="30" cy="30" r="19" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.6"/>
+            <circle cx="30" cy="11" r="2.3" fill="currentColor"/>
+            <circle cx="42.21" cy="15.45" r="2.3" fill="currentColor"/>
+            <circle cx="48.71" cy="26.70" r="2.3" fill="currentColor"/>
+            <circle cx="46.45" cy="39.50" r="2.3" fill="currentColor"/>
+            <circle cx="36.50" cy="47.85" r="2.3" fill="currentColor"/>
+            <circle cx="23.50" cy="47.85" r="2.3" fill="currentColor"/>
+            <circle cx="13.55" cy="39.50" r="2.3" fill="currentColor"/>
+            <circle cx="11.29" cy="26.70" r="2.3" fill="currentColor"/>
+            <circle cx="17.79" cy="15.45" r="2.3" fill="currentColor"/>
+            <circle cx="30" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="30" cy="30" r="1.5" fill="currentColor"/>
+            <path d="M30,21.5 L30,19 M38.5,30 L41,30 M30,38.5 L30,41 M21.5,30 L19,30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--cream);">Navgraha Shakha</p>
+        </div>
+        <p style="font-family:var(--font-mono);font-size:0.68rem;color:var(--cream-faint);margin-top:0.4rem;">by Rushali Thukral</p>
+        <p class="eyebrow" style="margin-top:0.6rem;">Astrology · Tarot · Spiritual Coaching</p>
+        <ul style="margin-top:1.5rem;list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem;">
+          <li><a href="mailto:navgrahashakha@gmail.com">navgrahashakha@gmail.com</a></li>
+          <li><a href="tel:+917758837418">+91 77588 37418</a></li>
+          <li>Goa, India · Sessions via Zoom &amp; Google Meet</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Connect</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find Me</h4>
+        <ul>
+          <li><a href="https://instagram.com/navgrahashakha" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://youtube.com/@navgrahashakha" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://wa.me/917758837418" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-disclaimer">The content on this website — including readings, articles, and any related communication — is offered for entertainment, educational, and general self-reflection purposes only. It is not a substitute for professional legal, medical, financial, or mental-health advice, diagnosis, or treatment, and should not be relied or acted upon as such. Please consult a qualified professional about your specific situation before making decisions based on anything read here. Using this website or its content does not create any advisory, fiduciary, or professional relationship, and no liability is assumed for actions taken on the basis of information provided.</p>
+    <p class="footer-copyright">© 2026 Navgraha Shakha by Rushali Thukral · All Rights Reserved</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

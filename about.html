@@ -1,461 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KJWRKG2K');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Rushali Thukral — Navgraha Shakha</title>
-<meta name="description" content="Meet Rushali Thukral — astrologer, tarot reader and spiritual coach based in Goa, India. Her journey from deep personal questioning to cosmic clarity.">
-<meta property="og:title" content="About Rushali Thukral — Navgraha Shakha">
-<meta property="og:description" content="Meet Rushali — astrologer, tarot reader & spiritual coach based in Goa. Self-taught in Vedic astrology and the Rider-Waite tarot tradition.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://navgrahashakha.com/about.html">
-<meta property="og:image" content="https://navgrahashakha.com/rushali.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About Rushali Thukral — Navgraha Shakha">
-<meta name="twitter:description" content="Meet Rushali — astrologer, tarot reader & spiritual coach based in Goa.">
-<meta name="twitter:image" content="https://navgrahashakha.com/rushali.jpg">
+<meta name="description" content="Meet Rushali Thukral — astrologer, tarot reader, and spiritual coach based in Goa, India.">
 <link rel="stylesheet" href="style.css">
-<style>
-/* ── ABOUT HERO ── */
-.about-hero {
-  position: relative;
-  padding: 10rem 2rem 6rem;
-  z-index: 1;
-  border-bottom: 1px solid rgba(212,168,64,0.15);
-  overflow: hidden;
-}
-.about-hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 0%, rgba(212,168,64,0.3) 0%, transparent 70%);
-  pointer-events: none;
-}
-.about-hero-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.5fr;
-  gap: 6rem; align-items: center;
-}
-.about-photo-wrap { position: relative; }
-.about-photo-frame {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-.about-photo-frame img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
-  display: block;
-  filter: saturate(0.9) contrast(1.05);
-}
-/* Gold overlay gradient at bottom */
-.about-photo-frame::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
-  background: linear-gradient(to top, rgba(18,8,48,0.6), transparent);
-}
-/* Corner ornaments */
-.corner-tl, .corner-tr, .corner-bl, .corner-br {
-  position: absolute; width: 28px; height: 28px;
-  border-color: rgba(107,47,160,0.42); z-index: 2;
-}
-.corner-tl { top: -8px; left: -8px; border-top: 1px solid; border-left: 1px solid; }
-.corner-tr { top: -8px; right: -8px; border-top: 1px solid; border-right: 1px solid; }
-.corner-bl { bottom: -8px; left: -8px; border-bottom: 1px solid; border-left: 1px solid; }
-.corner-br { bottom: -8px; right: -8px; border-bottom: 1px solid; border-right: 1px solid; }
-
-.about-photo-caption {
-  position: absolute; bottom: 1.5rem; left: 0; right: 0;
-  text-align: center; z-index: 3;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.32rem; font-style: italic;
-  color: rgba(232,215,255,0.8); letter-spacing: 0.08em;
-}
-
-/* Stats strip below photo */
-.about-stats {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 0; margin-top: 1.5rem;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: linear-gradient(135deg, rgba(58,18,96,0.75), rgba(42,13,80,0.85));
-}
-.stat-item {
-  text-align: center; padding: 1.2rem 0.5rem;
-  border-right: 1px solid rgba(212,168,64,0.12);
-}
-.stat-item:last-child { border-right: none; }
-.stat-num {
-  font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700;
-  color: var(--gold); display: block; line-height: 1;
-}
-.stat-label {
-  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ink-faint); margin-top: 0.4rem; display: block;
-}
-
-/* About text */
-.about-hero-text {}
-.about-eyebrow {
-  font-size: 1.55rem; font-weight: 400; letter-spacing: 0.4em;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: 1rem; display: block;
-}
-.about-name {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 700; letter-spacing: 0.06em;
-  color: var(--ink); line-height: 1.1; margin-bottom: 0.5rem;
-}
-.about-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.32rem; font-style: italic;
-  color: var(--gold); margin-bottom: 2rem; letter-spacing: 0.05em;
-}
-.about-divider {
-  width: 80px; height: 1px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  margin-bottom: 2rem;
-}
-.about-hero-text p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.55rem; line-height: 2;
-  color: var(--ink-dim); margin-bottom: 1.5rem;
-}
-.about-hero-text p strong { color: var(--ink); font-weight: 600; }
-.about-hero-text p em { color: var(--gold); font-style: italic; }
-
-/* Tags */
-.about-tags {
-  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem;
-}
-.about-tag {
-  font-size: 1.55rem; letter-spacing: 0.2em; text-transform: uppercase;
-  padding: 0.4rem 1rem;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--ink-dim);
-  background: rgba(212,168,64,0.04);
-}
-
-/* ── STORY SECTION ── */
-.story-section {
-  background: linear-gradient(180deg, var(--jewel-deep) 0%, rgba(30,12,60,1) 100%);
-  padding: 7rem 2rem; position: relative; z-index: 1;
-}
-.story-inner { max-width: 860px; margin: 0 auto; }
-.story-block {
-  display: grid; grid-template-columns: 80px 1fr;
-  gap: 2.5rem; padding: 3rem 0;
-  border-bottom: 1px solid rgba(107,47,160,0.08);
-  align-items: start;
-}
-.story-block:last-child { border-bottom: none; }
-.story-num {
-  font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 700;
-  color: rgba(212,168,64,0.12); line-height: 1; text-align: center;
-}
-.story-symbol {
-  font-size: 1.8rem; text-align: center;
-  display: block; margin-top: 0.5rem;
-}
-.story-content h3 {
-  font-family: 'Cinzel', serif; font-size: 1.32rem; font-weight: 600;
-  letter-spacing: 0.05em; color: var(--gold);
-  margin-bottom: 1rem;
-}
-.story-content p {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-  line-height: 1.95; color: var(--ink-dim);
-}
-.story-content p strong { color: var(--ink); font-weight: 600; }
-
-/* ── APPROACH SECTION ── */
-.approach-section {
-  background: rgba(49,20,102,0.3);
-  border-top: 1px solid rgba(212,168,64,0.12);
-  border-bottom: 1px solid rgba(212,168,64,0.12);
-  padding: 6rem 2rem; position: relative; z-index: 1;
-}
-.approach-grid {
-  max-width: 1100px; margin: 3rem auto 0;
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
-}
-.approach-card {
-  background: linear-gradient(145deg, rgba(58,18,96,0.75), rgba(42,13,80,0.88));
-  border: 1px solid rgba(212,168,64,0.15);
-  padding: 2.5rem 2rem; position: relative; transition: all 0.35s;
-}
-.approach-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
-  opacity: 0; transition: opacity 0.35s;
-}
-.approach-card:hover { transform: translateY(-3px); border-color: rgba(212,168,64,0.32); }
-.approach-card:hover::before { opacity: 1; }
-.approach-num {
-  font-family: 'Cinzel', serif; font-size: 2.8rem; font-weight: 700;
-  color: rgba(212,168,64,0.1); margin-bottom: 0.8rem; display: block; line-height: 1;
-}
-.approach-card h3 {
-  font-family: 'Cinzel', serif; font-size: 1.52rem; font-weight: 600;
-  letter-spacing: 0.06em; color: var(--ink); margin-bottom: 0.8rem;
-}
-.approach-card p {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-  line-height: 1.85; color: var(--ink-dim);
-}
-
-/* ── LINEAGES ── */
-.lineages-section { padding: 6rem 2rem; position: relative; z-index: 1; }
-.lineages-grid {
-  max-width: 900px; margin: 3rem auto 0;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-}
-.lineage-item {
-  display: flex; align-items: center; gap: 1.2rem;
-  padding: 1.2rem 1.5rem;
-  background: linear-gradient(135deg, rgba(49,20,102,0.5), rgba(37,16,80,0.6));
-  border: 1px solid rgba(212,168,64,0.15);
-  transition: all 0.3s;
-}
-.lineage-item:hover { border-color: rgba(107,47,160,0.28); }
-.lineage-icon { font-size: 1.6rem; flex-shrink: 0; }
-.lineage-item h4 {
-  font-family: 'Cinzel', serif; font-size: 1.55rem; font-weight: 600;
-  letter-spacing: 0.05em; color: var(--ink); margin-bottom: 0.2rem;
-}
-.lineage-item p { font-size: 1.32rem; color: var(--ink-faint); letter-spacing: 0.04em; }
-
-/* ── CTA ── */
-.about-cta {
-  background: linear-gradient(135deg, rgba(49,20,102,0.95), rgba(42,13,80,1));
-  border-top: 1px solid rgba(255,255,255,0.15);
-  padding: 5rem 2rem; text-align: center; position: relative; z-index: 1;
-}
-.about-cta::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(107,47,160,0.38), transparent);
-}
-.about-cta h2 {
-  font-family: 'Cinzel', serif; font-size: clamp(1.4rem,3vw,2.2rem);
-  font-weight: 600; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 1rem;
-}
-.about-cta p {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-  font-style: italic; color: var(--ink-dim); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto;
-}
-.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-@media (max-width: 900px) {
-  .about-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .approach-grid { grid-template-columns: 1fr; }
-  .lineages-grid { grid-template-columns: 1fr; }
-  .story-block { grid-template-columns: 50px 1fr; gap: 1.5rem; }
-  .story-num { font-size: 2rem; }
-}
-</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJWRKG2K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<script src="common.js"></script>
-<script>document.write(getNav('About'));</script>
 
-<!-- ABOUT HERO -->
-<div class="about-hero">
-  <div class="about-hero-inner">
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="19" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.55"/>
+        <circle cx="30" cy="11" r="2.3" fill="currentColor"/>
+        <circle cx="42.21" cy="15.45" r="2.3" fill="currentColor"/>
+        <circle cx="48.71" cy="26.70" r="2.3" fill="currentColor"/>
+        <circle cx="46.45" cy="39.50" r="2.3" fill="currentColor"/>
+        <circle cx="36.50" cy="47.85" r="2.3" fill="currentColor"/>
+        <circle cx="23.50" cy="47.85" r="2.3" fill="currentColor"/>
+        <circle cx="13.55" cy="39.50" r="2.3" fill="currentColor"/>
+        <circle cx="11.29" cy="26.70" r="2.3" fill="currentColor"/>
+        <circle cx="17.79" cy="15.45" r="2.3" fill="currentColor"/>
+        <circle cx="30" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="1.5" fill="currentColor"/>
+        <path d="M30,21.5 L30,19 M38.5,30 L41,30 M30,38.5 L30,41 M21.5,30 L19,30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Navgraha Shakha</span>
+        <span class="brand-tag">ASTROLOGY · TAROT · SPIRITUAL COACHING</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Connect</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold nav-cta">Book a Session</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Connect</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold">Book a Session</a>
+  </div>
+</nav>
 
-    <!-- Photo -->
-    <div class="about-photo-wrap fade-in">
-      <div class="about-photo-frame">
-        <img src="rushali.jpg" alt="Rushali Thukral — Astrologer &amp; Tarot Reader, Goa">
-        <div class="about-photo-caption">Goa, India</div>
+<section class="night panel">
+  <div class="wrap feature-split">
+    <div style="text-align:center;">
+      <img src="images/rushali.jpg" alt="Portrait of Rushali Thukral, astrologer and tarot reader" style="width:280px;height:280px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);margin:0 auto;box-shadow:0 0 60px rgba(183,154,224,0.25);">
+    </div>
+    <div class="feature-copy">
+      <span class="eyebrow">The Practitioner</span>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.2rem);">Rushali <em style="color:var(--gold-light);font-style:italic;">Thukral</em></h1>
+      <p class="dek" style="font-size:1rem;">Astrologer · Tarot Reader · Spiritual Coach</p>
+      <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2rem;">
+        <div><p style="font-family:var(--font-mono);font-size:0.68rem;color:var(--cream-faint);">GOA, INDIA</p></div>
+        <div><p style="font-family:var(--font-display);font-size:1.6rem;color:var(--gold-light);">100+</p><p style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;color:var(--cream-faint);">READINGS GIVEN</p></div>
+        <div><p style="font-family:var(--font-display);font-size:1.6rem;color:var(--gold-light);">2+</p><p style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;color:var(--cream-faint);">YEARS OF PRACTICE</p></div>
+        <div><p style="font-family:var(--font-display);font-size:1.6rem;color:var(--gold-light);">2</p><p style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;color:var(--cream-faint);">MODALITIES</p></div>
       </div>
-      <div class="corner-tl"></div>
-      <div class="corner-tr"></div>
-      <div class="corner-bl"></div>
-      <div class="corner-br"></div>
-      <!-- Stats -->
-      <div class="about-stats">
-        <div class="stat-item">
-          <span class="stat-num">50+</span>
-          <span class="stat-label">Readings Given</span>
+    </div>
+  </div>
+</section>
+
+<section class="paper panel panel-tight">
+  <div class="wrap" style="max-width:44rem;">
+    <p style="font-family:var(--font-display);font-size:1.2rem;line-height:1.85;color:var(--ink-dim);margin-bottom:1.2rem;">I am Rushali, an astrologer, tarot reader, and spiritual coach rooted in Goa, India. My practice weaves together the ancient wisdom of the nine planets (Navgraha) with the intuitive language of tarot to help people find answers to the questions that keep them awake at night.</p>
+    <p style="font-family:var(--font-display);font-size:1.2rem;line-height:1.85;color:var(--ink-dim);margin-bottom:1.2rem;">I came to astrology not through a classroom, but through a period of deep personal questioning, a time when nothing in my life made sense and I desperately needed to understand why. Astrology gave me that. It didn't just predict, it explained, and that changed everything for me.</p>
+    <p style="font-family:var(--font-display);font-size:1.2rem;line-height:1.85;color:var(--ink-dim);">Originally from Lucknow, I spent years as a digital marketer, someone who lives in data, patterns, and systems. Astrology, I discovered, is the oldest system of pattern recognition there is. The two worlds aren't so different.</p>
+  </div>
+</section>
+
+<section class="night panel">
+  <div class="wrap" style="max-width:50rem;">
+    <div class="section-head">
+      <span class="eyebrow">The Journey</span>
+      <h2>How I Got Here</h2>
+    </div>
+
+    <div class="process-step">
+      <span class="num">01</span>
+      <div><h3>☉ The Question That Started Everything</h3><p>Like most people who find astrology, I didn't seek it out, it found me. During one of the most challenging periods of my life, I kept asking the same question: why is this happening to me? Then I found astrology, specifically Vedic astrology and the ancient text of BPHS, and for the first time, the patterns of my life began to make sense.</p></div>
+    </div>
+    <div class="process-step">
+      <span class="num">02</span>
+      <div><h3>☽ The Study: Self-Taught &amp; Soul-Led</h3><p>I learned astrology the way most serious practitioners do, obsessively and independently. Brihat Parashara Hora Shastra (BPHS), the foundational classical text of Vedic astrology, became my primary guide. Tarot entered as the perfect complement, where astrology gives the map and tarot gives the moment-to-moment conversation with the soul.</p></div>
+    </div>
+    <div class="process-step">
+      <span class="num">03</span>
+      <div><h3>✦ The Readings: Skeptics Welcome</h3><p>Over 100 readings later, I've noticed something: the people who come in most skeptical leave the most amazed. When someone walks in thinking "this is probably nonsense" and walks out saying "how did you know that," that's when I know astrology is doing what it's supposed to do.</p></div>
+    </div>
+    <div class="process-step" style="border-bottom:none;">
+      <span class="num">04</span>
+      <div><h3>♓ Astrology as a Tool, Not a Verdict</h3><p>I do not practice predictive astrology as fortune-telling. For me, the birth chart is not a verdict, it is a map: a tool for understanding your patterns, your karma, your dharma, and the timing of your life's seasons.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="night approach-hero" style="padding:5rem 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How I Work</span>
+      <h2>My Approach</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="arch-card paper" style="border-width:1px;">
+        <div class="arch-body" style="padding-top:2rem;">
+          <span class="card-eyebrow">01</span>
+          <h3>The Chart as a Living Map</h3>
+          <p>I read your birth chart not as a fixed destiny but as a living, breathing reflection of who you are. Life is a blend of free will and what is written, and I honour both.</p>
         </div>
-        <div class="stat-item">
-          <span class="stat-num">2+</span>
-          <span class="stat-label">Years of Practice</span>
+      </div>
+      <div class="arch-card paper" style="border-width:1px;">
+        <div class="arch-body" style="padding-top:2rem;">
+          <span class="card-eyebrow">02</span>
+          <h3>Honesty Over Comfort</h3>
+          <p>I will not tell you what you want to hear. I will tell you what the chart says, with compassion, but without sugar-coating.</p>
         </div>
-        <div class="stat-item">
-          <span class="stat-num">2</span>
-          <span class="stat-label">Modalities</span>
+      </div>
+      <div class="arch-card paper" style="border-width:1px;">
+        <div class="arch-body" style="padding-top:2rem;">
+          <span class="card-eyebrow">03</span>
+          <h3>Understanding Over Prediction</h3>
+          <p>My goal is never to make you dependent on readings. It's to give you enough understanding to begin reading your own life's patterns and timing.</p>
         </div>
       </div>
     </div>
-
-    <!-- Text -->
-    <div class="about-hero-text fade-in">
-      <span class="about-eyebrow">The Practitioner</span>
-      <h1 class="about-name">Rushali<br>Thukral</h1>
-      <div class="about-title">Astrologer · Tarot Reader · Spiritual Coach</div>
-      <div class="about-divider"></div>
-      <p>
-        I am Rushali — an astrologer, tarot reader, and spiritual coach rooted in <strong>Goa, India</strong>. My practice weaves together the ancient wisdom of the <strong>nine planets (Navgraha)</strong> with the intuitive language of tarot to help people find answers to the questions that keep them awake at night.
-      </p>
-      <p>
-        I came to astrology not through a classroom, but through a period of <strong>deep personal questioning</strong> — a time when nothing in my life made sense and I desperately needed to understand <em>why</em>. Astrology gave me that. It didn't just predict — it explained. And that changed everything for me.
-      </p>
-      <p>
-        Originally from <strong>Lucknow</strong>, I have spent years as a digital marketer — someone who lives in data, patterns, and systems. Astrology, I discovered, is the oldest system of pattern recognition there is. The two worlds are not so different.
-      </p>
-      
-    </div>
-
   </div>
-</div>
+</section>
 
-<!-- STORY SECTION -->
-<div class="story-section">
-  <div class="story-inner">
-    <div style="text-align:center;margin-bottom:1rem;">
-      <span style="font-size:0.65rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);">The Journey</span>
+<section class="paper panel">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Foundations</span>
+      <h2>Influences &amp; Lineages</h2>
+      <p class="dek" style="font-size:1rem;">The traditions and systems that have shaped my practice.</p>
     </div>
-    <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:600;letter-spacing:0.05em;color:var(--ink);text-align:center;margin-bottom:4rem;">How I Got Here</h2>
+    <div class="grid" style="grid-template-columns:repeat(1,1fr);gap:1.2rem;">
+      <div class="feature-split" style="grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#B5652E" stroke-width="1.7" style="flex-shrink:0;"><circle cx="12" cy="12" r="5"/><path d="M12,2 L12,4.5 M12,19.5 L12,22 M2,12 L4.5,12 M19.5,12 L22,12 M5,5 L6.8,6.8 M17.2,17.2 L19,19 M5,19 L6.8,17.2 M17.2,6.8 L19,5" stroke-linecap="round"/></svg><div><h3 style="font-size:1.05rem;">BPHS Vedic Astrology</h3><p style="color:var(--ink-dim);font-size:0.9rem;">Brihat Parashara Hora Shastra, the classical foundation</p></div></div>
+      <hr class="rule">
+      <div class="feature-split" style="grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#B5652E" stroke-width="1.7" style="flex-shrink:0;"><rect x="6" y="2" width="12" height="20" rx="1.5"/><path d="M12,8 L13,10.5 L15.5,11 L13,11.5 L12,14 L11,11.5 L8.5,11 L11,10.5 Z" fill="#B5652E" stroke="none"/></svg><div><h3 style="font-size:1.05rem;">Tarot: Rider-Waite Tradition</h3><p style="color:var(--ink-dim);font-size:0.9rem;">Western symbolic &amp; intuitive card reading</p></div></div>
+      <hr class="rule">
+      <div class="feature-split" style="grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;"><svg viewBox="0 0 24 24" width="28" height="28" fill="#B5652E" style="flex-shrink:0;"><path d="M8,3 L9,6 L12,7 L9,8 L8,11 L7,8 L4,7 L7,6 Z"/><path d="M17,10 L17.7,12 L19.5,12.7 L17.7,13.4 L17,15.5 L16.3,13.4 L14.5,12.7 L16.3,12 Z"/><path d="M10,15 L10.6,16.6 L12.2,17.2 L10.6,17.8 L10,19.5 L9.4,17.8 L7.8,17.2 L9.4,16.6 Z"/></svg><div><h3 style="font-size:1.05rem;">Nakshatras &amp; Lunar Astrology</h3><p style="color:var(--ink-dim);font-size:0.9rem;">The 27 lunar mansions of Vedic tradition</p></div></div>
+      <hr class="rule">
+      <div class="feature-split" style="grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#B5652E" stroke-width="1.7" stroke-linejoin="round" style="flex-shrink:0;"><path d="M7,3 L17,3 L12,11 L17,21 L7,21 L12,11 Z"/></svg><div><h3 style="font-size:1.05rem;">Vimshottari Dasha System</h3><p style="color:var(--ink-dim);font-size:0.9rem;">Karmic planetary period cycles &amp; timing</p></div></div>
+      <hr class="rule">
+      <div class="feature-split" style="grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#B5652E" stroke-width="1.7" style="flex-shrink:0;"><circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="14" r="5.5"/></svg><div><h3 style="font-size:1.05rem;">Vedic Compatibility</h3><p style="color:var(--ink-dim);font-size:0.9rem;">Ashtakoot matching &amp; relationship astrology</p></div></div>
+      <hr class="rule">
+      <div class="feature-split" style="grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#B5652E" stroke-width="1.7" style="flex-shrink:0;"><path d="M5,19c0-8 6-14 14-14 0 8-6 14-14 14z"/><path d="M5,19c3-3 6-6 9-9"/></svg><div><h3 style="font-size:1.05rem;">Intuitive Tarot Reading</h3><p style="color:var(--ink-dim);font-size:0.9rem;">Soul-centred, symbolic &amp; story-based</p></div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="story-block fade-in">
+<section class="paper panel panel-tight center">
+  <div class="wrap">
+    <h2>Curious What Your Chart Reveals?</h2>
+    <p class="dek">Book a session and let's find your answers together.</p>
+    <div class="hero-actions">
+      <a href="services.html" class="btn btn-outline-paper">View Services</a>
+      <a href="contact.html" class="btn btn-gold">Book a Session →</a>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="wrap">
+    <img src="images/illustrations/newsletter.svg" alt="" loading="lazy" style="width:100%;max-width:160px;margin:0 auto 1rem;">
+    <p class="eyebrow" style="color:var(--teal)">✦ Cosmic Letters</p>
+    <p style="color:var(--ink-dim);margin-top:0.6rem;">Monthly astrology &amp; tarot musings — arriving around the new moon.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/xwvyeqyp" method="POST">
+      <label for="newsletter-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+      <input type="email" id="newsletter-email" name="email" required placeholder="your@email.com">
+      <button type="submit" class="btn btn-gold">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
       <div>
-        <div class="story-num">01</div>
-        <span class="story-symbol">☉</span>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;flex-shrink:0;color:var(--gold-light);">
+            <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="30" cy="30" r="19" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.6"/>
+            <circle cx="30" cy="11" r="2.3" fill="currentColor"/>
+            <circle cx="42.21" cy="15.45" r="2.3" fill="currentColor"/>
+            <circle cx="48.71" cy="26.70" r="2.3" fill="currentColor"/>
+            <circle cx="46.45" cy="39.50" r="2.3" fill="currentColor"/>
+            <circle cx="36.50" cy="47.85" r="2.3" fill="currentColor"/>
+            <circle cx="23.50" cy="47.85" r="2.3" fill="currentColor"/>
+            <circle cx="13.55" cy="39.50" r="2.3" fill="currentColor"/>
+            <circle cx="11.29" cy="26.70" r="2.3" fill="currentColor"/>
+            <circle cx="17.79" cy="15.45" r="2.3" fill="currentColor"/>
+            <circle cx="30" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="30" cy="30" r="1.5" fill="currentColor"/>
+            <path d="M30,21.5 L30,19 M38.5,30 L41,30 M30,38.5 L30,41 M21.5,30 L19,30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--cream);">Navgraha Shakha</p>
+        </div>
+        <p style="font-family:var(--font-mono);font-size:0.68rem;color:var(--cream-faint);margin-top:0.4rem;">by Rushali Thukral</p>
+        <p class="eyebrow" style="margin-top:0.6rem;">Astrology · Tarot · Spiritual Coaching</p>
+        <ul style="margin-top:1.5rem;list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem;">
+          <li><a href="mailto:navgrahashakha@gmail.com">navgrahashakha@gmail.com</a></li>
+          <li><a href="tel:+917758837418">+91 77588 37418</a></li>
+          <li>Goa, India · Sessions via Zoom &amp; Google Meet</li>
+        </ul>
       </div>
-      <div class="story-content">
-        <h3>The Question That Started Everything</h3>
-        <p>Like most people who find astrology, I didn't seek it out — it found me. During one of the most challenging periods of my life, I kept asking the same question: <strong>why is this happening to me?</strong> I had tried logic. I had tried ignoring it. Nothing gave me the clarity I needed. Then I found astrology — specifically, Vedic astrology and the ancient text of BPHS — and for the first time, the patterns of my life began to make sense.</p>
-      </div>
-    </div>
-
-    <div class="story-block fade-in">
       <div>
-        <div class="story-num">02</div>
-        <span class="story-symbol">☽</span>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Connect</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
       </div>
-      <div class="story-content">
-        <h3>The Study — Self-Taught &amp; Soul-Led</h3>
-        <p>I learned astrology the way most serious practitioners do — obsessively and independently. Through online courses, ancient texts, and hundreds of hours of chart study, I built my knowledge from the ground up. <strong>Brihat Parashara Hora Shastra (BPHS)</strong>, the foundational classical text of Vedic astrology, became my primary guide. Alongside this, tarot entered my life as the perfect complement — where astrology gives the map, tarot gives the moment-to-moment conversation with the soul.</p>
-      </div>
-    </div>
-
-    <div class="story-block fade-in">
       <div>
-        <div class="story-num">03</div>
-        <span class="story-symbol">✦</span>
-      </div>
-      <div class="story-content">
-        <h3>The Readings — Skeptics Welcome</h3>
-        <p>Over 50 readings later, I've noticed something: <strong>the people who come in most skeptical leave the most amazed.</strong> That's not a boast — it's actually my favourite part of this work. When someone walks in thinking "this is probably nonsense" and walks out saying "how did you know that" — that's when I know astrology is doing what it's supposed to do. It's not magic. It's an ancient intelligence that we've forgotten how to read.</p>
-      </div>
-    </div>
-
-    <div class="story-block fade-in">
-      <div>
-        <div class="story-num">04</div>
-        <span class="story-symbol">🌙</span>
-      </div>
-      <div class="story-content">
-        <h3>Astrology as a Tool, Not a Verdict</h3>
-        <p>I want to be clear about how I work: <strong>I do not practice predictive astrology as fortune-telling.</strong> For me, the birth chart is not a verdict — it is a map. A tool for understanding your patterns, your karma, your dharma, and the timing of your life's seasons. Yes, my predictions are often accurate. But more importantly, they help people understand <em>why</em> — and that understanding is what creates real change.</p>
+        <h4>Find Me</h4>
+        <ul>
+          <li><a href="https://instagram.com/navgrahashakha" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://youtube.com/@navgrahashakha" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://wa.me/917758837418" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
       </div>
     </div>
   </div>
-</div>
-
-<!-- APPROACH SECTION -->
-<div class="approach-section">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="font-size:0.65rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;">
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,transparent,rgba(107,47,160,0.38));display:block;"></span>
-      How I Work
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,rgba(107,47,160,0.38),transparent);display:block;"></span>
-    </div>
-    <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:600;letter-spacing:0.05em;color:var(--ink);margin-bottom:0;">My Approach</h2>
+  <div class="footer-bottom">
+    <p class="footer-disclaimer">The content on this website — including readings, articles, and any related communication — is offered for entertainment, educational, and general self-reflection purposes only. It is not a substitute for professional legal, medical, financial, or mental-health advice, diagnosis, or treatment, and should not be relied or acted upon as such. Please consult a qualified professional about your specific situation before making decisions based on anything read here. Using this website or its content does not create any advisory, fiduciary, or professional relationship, and no liability is assumed for actions taken on the basis of information provided.</p>
+    <p class="footer-copyright">© 2026 Navgraha Shakha by Rushali Thukral · All Rights Reserved</p>
   </div>
-  <div class="approach-grid">
-    <div class="approach-card fade-in">
-      <span class="approach-num">01</span>
-      <h3>The Chart as a Living Map</h3>
-      <p>I read your birth chart not as a fixed destiny but as a living, breathing reflection of who you are and where you're headed. Life is a blend of free will and what is written — and I honour both.</p>
-    </div>
-    <div class="approach-card fade-in">
-      <span class="approach-num">02</span>
-      <h3>Honesty Over Comfort</h3>
-      <p>I will not tell you what you want to hear. I will tell you what the chart says — with compassion, but without sugar-coating. The people who get the most from a reading are those who are ready for the truth.</p>
-    </div>
-    <div class="approach-card fade-in">
-      <span class="approach-num">03</span>
-      <h3>Understanding Over Prediction</h3>
-      <p>My goal is never to make you dependent on readings. It's to give you enough understanding of your own chart that you can begin to read your own life — its patterns, its timing, its deeper purpose.</p>
-    </div>
-  </div>
-</div>
+</footer>
 
-<!-- LINEAGES -->
-<div class="lineages-section">
-  <div style="max-width:900px;margin:0 auto;">
-    <div style="font-size:0.65rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;">
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,transparent,rgba(107,47,160,0.38));display:block;"></span>
-      Foundations
-      <span style="flex:0 0 40px;height:1px;background:linear-gradient(90deg,rgba(107,47,160,0.38),transparent);display:block;"></span>
-    </div>
-    <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:600;letter-spacing:0.05em;color:var(--ink);margin-bottom:0.8rem;">Influences &amp; Lineages</h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink-dim);margin-bottom:0;">The traditions and systems that have shaped my practice.</p>
-    <div class="lineages-grid" style="margin-top:2.5rem;">
-      <div class="lineage-item fade-in">
-        <span class="lineage-icon">☉</span>
-        <div><h4>BPHS Vedic Astrology</h4><p>Brihat Parashara Hora Shastra — the classical foundation</p></div>
-      </div>
-      <div class="lineage-item fade-in">
-        <span class="lineage-icon">☽</span>
-        <div><h4>Tarot — Rider-Waite Tradition</h4><p>Western symbolic &amp; intuitive card reading</p></div>
-      </div>
-      <div class="lineage-item fade-in">
-        <span class="lineage-icon">✦</span>
-        <div><h4>Nakshatras &amp; Lunar Astrology</h4><p>The 27 lunar mansions of Vedic tradition</p></div>
-      </div>
-      <div class="lineage-item fade-in">
-        <span class="lineage-icon">♄</span>
-        <div><h4>Vimshottari Dasha System</h4><p>Karmic planetary period cycles &amp; timing</p></div>
-      </div>
-      <div class="lineage-item fade-in">
-        <span class="lineage-icon">💍</span>
-        <div><h4>Vedic Compatibility</h4><p>Ashtakoot matching &amp; relationship astrology</p></div>
-      </div>
-      <div class="lineage-item fade-in">
-        <span class="lineage-icon">🌿</span>
-        <div><h4>Intuitive Tarot Reading</h4><p>Soul-centred, symbolic &amp; story-based</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="about-cta">
-  <h2>Curious What Your Chart Reveals?</h2>
-  <p>Book a session and let's find your answers together.</p>
-  <div class="cta-buttons">
-    <a href="services.html" class="btn-primary">View Services</a>
-    <a href="contact.html" class="btn-secondary">Book a Session</a>
-  </div>
-</div>
-
-<script>document.write(getNewsletterBar() + getFooter() + getWhatsApp());</script>
+<script src="script.js"></script>
 </body>
 </html>

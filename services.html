@@ -1,391 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KJWRKG2K');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services — Navgraha Shakha</title>
-<meta name="description" content="Birth chart readings, tarot sessions, relationship readings, financial readings and spiritual coaching with Rushali.">
-<meta property="og:title" content="Services & Pricing — Navgraha Shakha">
-<meta property="og:description" content="Vedic astrology readings, tarot sessions & spiritual coaching. Mini readings from ₹149. Birth chart, karmic, relationship & tarot sessions available.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://navgrahashakha.com/services.html">
-<meta property="og:image" content="https://navgrahashakha.com/rushali.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Services & Pricing — Navgraha Shakha">
-<meta name="twitter:description" content="Vedic astrology readings, tarot sessions & spiritual coaching. Mini readings from ₹149.">
-<meta name="twitter:image" content="https://navgrahashakha.com/rushali.jpg">
+<title>Services &amp; Pricing — Navgraha Shakha</title>
+<meta name="description" content="Vedic astrology, tarot, and relationship readings with Rushali Thukral — transparent pricing, sessions held via Zoom or Google Meet.">
 <link rel="stylesheet" href="style.css">
-<style>
-.services-grid {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-}
-.service-card {
-  background: rgba(58,18,96,0.85); border: 1px solid rgba(255,255,255,0.15);
-  padding: 2.5rem 2rem; transition: all 0.3s;
-  box-shadow: none;
-  display: flex; flex-direction: column;
-}
-.service-card:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-3px); box-shadow: none; }
-.service-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
-.service-name {
-  font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 600;
-  letter-spacing: 0.05em; color: var(--ink); margin-bottom: 0.8rem;
-}
-.service-desc {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
-  line-height: 1.85; color: var(--ink-dim); margin-bottom: 1.2rem; flex: 1;
-}
-.service-includes {
-  list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;
-}
-.service-includes li {
-  font-size: 1rem; color: var(--ink-dim); padding-left: 1.2rem;
-  position: relative; letter-spacing: 0.03em;
-}
-.service-includes li::before { content: '✦'; position: absolute; left: 0; color: var(--lavender-soft); font-size: 0.55rem; top: 0.2rem; }
-.service-meta {
-  display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
-  padding-top: 1.2rem; border-top: 1px solid rgba(107,47,160,0.08); margin-top: auto;
-}
-.service-tag {
-  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-  padding: 0.3rem 0.8rem; border: 1px solid rgba(255,255,255,0.2); color: var(--gold);
-  background: rgba(196,176,232,0.05);
-}
-.service-duration { font-size: 0.82rem; letter-spacing: 0.08em; color: var(--ink-faint); margin-left: auto; }
-
-.how-section { background: var(--surface); padding: 6rem 2rem; position: relative; z-index: 1; }
-.how-steps { max-width: 900px; margin: 3rem auto 0; display: flex; flex-direction: column; }
-.how-step {
-  display: grid; grid-template-columns: 80px 1fr; gap: 2rem;
-  padding: 2.5rem 0; border-bottom: 1px solid rgba(107,47,160,0.08); align-items: start;
-}
-.how-step:last-child { border-bottom: none; }
-.step-num {
-  font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 700;
-  color: rgba(255,255,255,0.18); line-height: 1;
-}
-.step-content h3 {
-  font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 600;
-  letter-spacing: 0.05em; color: var(--ink); margin-bottom: 0.6rem;
-}
-.step-content p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; line-height: 1.8; color: var(--ink-dim); }
-
-.testimonials-section { padding: 6rem 2rem; position: relative; z-index: 1; }
-.testimonials-grid {
-  max-width: 1100px; margin: 3rem auto 0;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-}
-.testimonial-card {
-  background: rgba(58,18,96,0.85); border: 1px solid rgba(255,255,255,0.15);
-  padding: 2rem 1.5rem; position: relative;
-  box-shadow: none;
-}
-.testimonial-card::before {
-  content: '"'; font-family: 'Cinzel', serif; font-size: 4rem;
-  color: var(--lavender-faint); opacity: 0.5;
-  position: absolute; top: -0.5rem; left: 1rem; line-height: 1;
-}
-.stars { color: var(--gold); font-size: 1rem; letter-spacing: 0.2rem; margin-bottom: 1rem; display: block; }
-.testimonial-text {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic;
-  line-height: 1.8; color: var(--ink-dim); margin-bottom: 1.2rem;
-}
-.testimonial-author { font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-
-.price-row {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-  gap: 1rem;
-}
-.price-row:last-child { border-bottom: none; }
-.price-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ink-dim); line-height: 1.4; }
-.price-amt { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: var(--gold); white-space: nowrap; }
-
-@media(max-width:900px){
-  .services-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .how-step { grid-template-columns: 60px 1fr; gap: 1.2rem; }
-  .pricing-grid { grid-template-columns: 1fr !important; }
-}
-</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJWRKG2K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<script src="common.js"></script>
-<script>document.write(getNav('Services'));</script>
 
-<div class="page-hero">
-  <div class="page-eyebrow">What I Offer</div>
-  <h1 class="page-title">Readings &amp; Sessions</h1>
-  <p class="page-subtitle">Each session is a sacred space for clarity, insight, and cosmic alignment.</p>
-</div>
-
-<section style="background:rgba(80,28,128,0.4);padding:6rem 2rem;position:relative;z-index:1;">
-  <div class="services-grid">
-    <div class="service-card fade-in">
-      <span class="service-icon">☉</span>
-      <div class="service-name">Birth Chart Reading</div>
-      <p class="service-desc">A comprehensive reading of your natal chart — exploring your sun, moon, rising, and all nine Navgrahas to illuminate your soul's blueprint and life themes.</p>
-      <ul class="service-includes">
-        <li>Full planetary placements &amp; house analysis</li>
-        <li>Life themes, strengths &amp; karmic patterns</li>
-        <li>Current planetary transits</li>
-        <li>Recorded session + written summary</li>
-      </ul>
-      <div class="service-meta">
-        <span class="service-tag">Vedic Astrology</span>
-        <span class="service-duration">60 min · Birth date &amp; time required</span>
-      </div>
-    </div>
-    <div class="service-card fade-in">
-      <span class="service-icon">☽</span>
-      <div class="service-name">Tarot Reading</div>
-      <p class="service-desc">Intuitive tarot sessions for clarity on love, career, life transitions, and spiritual growth — drawing from the rich symbolic language of the cards.</p>
-      <ul class="service-includes">
-        <li>Single question or open reading</li>
-        <li>Love, career, or life path focus</li>
-        <li>Photo of the spread included</li>
-        <li>Follow-up Q&amp;A via WhatsApp</li>
-      </ul>
-      <div class="service-meta">
-        <span class="service-tag">Tarot</span>
-        <span class="service-duration">30 or 60 min sessions</span>
-      </div>
-    </div>
-    <div class="service-card fade-in">
-      <span class="service-icon">💰</span>
-      <div class="service-name">Financial Reading</div>
-      <p class="service-desc">An astrology reading focused on your relationship with wealth, career, and abundance — exploring the 2nd, 6th, 10th, and 11th houses of your chart.</p>
-      <ul class="service-includes">
-        <li>Wealth &amp; abundance indicators</li>
-        <li>Career path &amp; dharma analysis</li>
-        <li>Timing for financial decisions</li>
-        <li>Planetary periods affecting income</li>
-      </ul>
-      <div class="service-meta">
-        <span class="service-tag">Vedic Astrology</span>
-        <span class="service-duration">60 min · Birth details required</span>
-      </div>
-    </div>
-    <div class="service-card fade-in">
-      <span class="service-icon">🌿</span>
-      <div class="service-name">Soul Path Reading</div>
-      <p class="service-desc">A reading centred on your life's purpose, dharma, and soul evolution — exploring the nodes of the moon and the deeper calling written in your chart.</p>
-      <ul class="service-includes">
-        <li>Rahu &amp; Ketu — karmic axis analysis</li>
-        <li>Soul's evolutionary direction</li>
-        <li>Gifts brought from past lives</li>
-        <li>Practical guidance for alignment</li>
-      </ul>
-      <div class="service-meta">
-        <span class="service-tag">Vedic Astrology</span>
-        <span class="service-duration">60 min · Birth details required</span>
-      </div>
-    </div>
-    <div class="service-card fade-in">
-      <span class="service-icon">✦</span>
-      <div class="service-name">Relationship &amp; Synastry Reading</div>
-      <p class="service-desc">Explore the cosmic dynamics between you and a partner, friend, or family member — understanding compatibility, karmic patterns, and soul contracts.</p>
-      <ul class="service-includes">
-        <li>Synastry &amp; composite chart analysis</li>
-        <li>Karmic ties &amp; past-life connections</li>
-        <li>Compatibility &amp; growth potential</li>
-        <li>Practical relationship guidance</li>
-      </ul>
-      <div class="service-meta">
-        <span class="service-tag">Relationships</span>
-        <span class="service-duration">75 min · Two birth charts required</span>
-      </div>
-    </div>
-    <div class="service-card fade-in">
-      <span class="service-icon">💍</span>
-      <div class="service-name">Marriage &amp; Karmic Compatibility</div>
-      <p class="service-desc">A detailed compatibility reading for couples considering marriage — exploring Ashtakoot matching, karmic bonds, and the long-term potential of the union.</p>
-      <ul class="service-includes">
-        <li>Ashtakoot &amp; Guna matching</li>
-        <li>Karmic &amp; dharmic compatibility</li>
-        <li>Timing &amp; auspicious periods</li>
-        <li>Long-term relationship themes</li>
-      </ul>
-      <div class="service-meta">
-        <span class="service-tag">Marriage · Vedic</span>
-        <span class="service-duration">90 min · Both birth charts required</span>
-      </div>
-    </div>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="19" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.55"/>
+        <circle cx="30" cy="11" r="2.3" fill="currentColor"/>
+        <circle cx="42.21" cy="15.45" r="2.3" fill="currentColor"/>
+        <circle cx="48.71" cy="26.70" r="2.3" fill="currentColor"/>
+        <circle cx="46.45" cy="39.50" r="2.3" fill="currentColor"/>
+        <circle cx="36.50" cy="47.85" r="2.3" fill="currentColor"/>
+        <circle cx="23.50" cy="47.85" r="2.3" fill="currentColor"/>
+        <circle cx="13.55" cy="39.50" r="2.3" fill="currentColor"/>
+        <circle cx="11.29" cy="26.70" r="2.3" fill="currentColor"/>
+        <circle cx="17.79" cy="15.45" r="2.3" fill="currentColor"/>
+        <circle cx="30" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="1.5" fill="currentColor"/>
+        <path d="M30,21.5 L30,19 M38.5,30 L41,30 M30,38.5 L30,41 M21.5,30 L19,30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Navgraha Shakha</span>
+        <span class="brand-tag">ASTROLOGY · TAROT · SPIRITUAL COACHING</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Connect</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold nav-cta">Book a Session</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Connect</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold">Book a Session</a>
+  </div>
+</nav>
 
-  <!-- Gift sessions note -->
-  <div style="max-width:1100px;margin:3rem auto 0;padding:2rem;background:var(--surface);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;gap:1.5rem;">
-    <span style="font-size:2rem;flex-shrink:0;">🎁</span>
-    <div>
-      <div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;letter-spacing:0.05em;color:var(--ink);margin-bottom:0.4rem;">Gift a Session</div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.7;color:var(--ink-dim);">All sessions are available as paid gifts — a truly meaningful present for someone you love. Mention it in your booking message and I'll send a beautiful gift confirmation for you to share.</p>
-    </div>
-    <a href="contact.html" class="btn-secondary" style="flex-shrink:0;">Enquire →</a>
+<section class="night panel-tight" style="padding-top:4rem;">
+  <div class="wrap center" style="max-width:36rem;">
+    <span class="eyebrow">What I Offer</span>
+    <h1 style="margin-top:0.6rem;">Readings &amp; Sessions</h1>
+    <p class="dek">Each session is a sacred space for clarity, insight, and cosmic alignment.</p>
   </div>
 </section>
 
-<!-- ── PRICING ── -->
-<section style="background:var(--deep);padding:6rem 2rem;position:relative;z-index:1;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-eyebrow" style="justify-content:center;">Transparent Pricing</div>
-    <h2 class="section-title" style="text-align:center;">Session Rates</h2>
-    <p class="section-subtitle" style="text-align:center;margin:0 auto 3.5rem;">All sessions are held online via Zoom or Google Meet. Payment details are shared upon booking confirmation.</p>
+<section class="paper panel">
+  <div class="wrap grid grid-3">
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="pricing-grid">
-
-      <!-- Vedic Astrology -->
-      <div style="background:rgba(58,18,96,0.85);border:1px solid rgba(255,255,255,0.15);padding:2.5rem 2rem;">
-        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(212,168,64,0.3);">
-          <span style="font-size:1.6rem;">☉</span>
-          <div style="font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;letter-spacing:0.05em;color:var(--gold);">Vedic Astrology</div>
-        </div>
-
-        <div style="margin-bottom:1.8rem;">
-          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">15 Minute Sessions</div>
-          <div class="price-row">
-            <span class="price-name">Mini Reading · Ask 1 Question</span>
-            <span class="price-amt">₹149</span>
-          </div>
-          <div class="price-row">
-            <span class="price-name">Mini Reading · Ask 2 Questions</span>
-            <span class="price-amt">₹249</span>
-          </div>
-        </div>
-
-        <div style="margin-bottom:1.8rem;">
-          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">45 Minute Sessions</div>
-          <div class="price-row">
-            <span class="price-name">Full Birth Chart Reading</span>
-            <span class="price-amt">₹999</span>
-          </div>
-          <div class="price-row">
-            <span class="price-name">Karmic Soul Reading</span>
-            <span class="price-amt">₹1,099</span>
-          </div>
-        </div>
-
-        <div>
-          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">60 Minute Sessions</div>
-          <div class="price-row">
-            <span class="price-name">Relationship Compatibility Reading</span>
-            <span class="price-amt">₹1,299</span>
-          </div>
-        </div>
+    <div class="arch-card" id="birth-chart-reading" style="scroll-margin-top:6rem;">
+      <div class="arch-top photo">
+        <img src="images/photos/zodiac-wheel-landscape.jpg" alt="A hand-drawn astrological chart with zodiac symbols" loading="lazy">
       </div>
-
-      <!-- Tarot -->
-      <div style="background:rgba(58,18,96,0.85);border:1px solid rgba(255,255,255,0.15);padding:2.5rem 2rem;">
-        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(212,168,64,0.3);">
-          <span style="font-size:1.6rem;">☽</span>
-          <div style="font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;letter-spacing:0.05em;color:var(--gold);">Tarot Card Reading</div>
+      <div class="arch-body">
+        <span class="card-eyebrow">☉ Vedic Astrology</span>
+        <h3>Birth Chart Reading</h3>
+        <p>A comprehensive reading of your natal chart — exploring your sun, moon, rising, and all nine Navgrahas to illuminate your soul's blueprint and life themes.</p>
+        <ul>
+          <li>Full planetary placements &amp; house analysis</li>
+          <li>Life themes, strengths &amp; karmic patterns</li>
+          <li>Current planetary transits</li>
+          <li>Recorded session + written summary</li>
+        </ul>
+        <div class="arch-price-row"><span class="tag">Vedic Astrology</span><span class="price-amt">₹999</span></div>
+        <p class="arch-price-note">60 min · Birth date &amp; time required</p>
+        <div class="arch-price-row" style="margin-top:0.7rem;padding-top:0.7rem;">
+          <span style="font-size:0.82rem;color:var(--ink-dim);">Mini Reading · Ask 1 Question (15 min)</span>
+          <span class="price-amt" style="font-size:0.82rem;">₹149</span>
         </div>
-
-        <div style="margin-bottom:1.8rem;">
-          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">30 Minute Session</div>
-          <div class="price-row">
-            <span class="price-name">Tarot Reading</span>
-            <span class="price-amt">₹299</span>
-          </div>
+        <div class="arch-price-row" style="margin-top:0.4rem;padding-top:0;border-top:none;">
+          <span style="font-size:0.82rem;color:var(--ink-dim);">Mini Reading · Ask 2 Questions (15 min)</span>
+          <span class="price-amt" style="font-size:0.82rem;">₹249</span>
         </div>
-
-        <div>
-          <div style="font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.9rem;">60 Minute Session</div>
-          <div class="price-row">
-            <span class="price-name">Tarot Reading</span>
-            <span class="price-amt">₹499</span>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink-faint);line-height:1.7;">All readings include a follow-up Q&amp;A window via WhatsApp within 24 hours of the session.</p>
-        </div>
+        <a href="contact.html" class="arch-link mt-2">Book This Reading <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-
     </div>
 
-    <div style="text-align:center;margin-top:3rem;">
-      <a href="contact.html" class="btn-primary">Book a Session</a>
+    <div class="arch-card" id="tarot-reading" style="scroll-margin-top:6rem;">
+      <div class="arch-top photo">
+        <img src="images/photos/tarot-cards-table.jpg" alt="A spread of illustrated tarot cards" loading="lazy">
+      </div>
+      <div class="arch-body">
+        <span class="card-eyebrow">☽ Tarot</span>
+        <h3>Tarot Reading</h3>
+        <p>Intuitive tarot sessions for clarity on love, career, life transitions, and spiritual growth — drawing from the rich symbolic language of the cards.</p>
+        <ul>
+          <li>Single question or open reading</li>
+          <li>Love, career, or life path focus</li>
+          <li>Photo of the spread included</li>
+        </ul>
+        <div class="arch-price-row"><span class="tag">Tarot</span><span class="price-amt">₹299 – ₹499</span></div>
+        <p class="arch-price-note">30 min: ₹299 · 60 min: ₹499</p>
+        <a href="contact.html" class="arch-link mt-2">Book This Reading <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="arch-card" id="soul-path-reading" style="scroll-margin-top:6rem;">
+      <div class="arch-top photo">
+        <img src="images/photos/lunar-eclipse-phases.jpg" alt="Phases of a lunar eclipse across the night sky" loading="lazy">
+      </div>
+      <div class="arch-body">
+        <span class="card-eyebrow">☊ Vedic Astrology</span>
+        <h3>Soul Path Reading</h3>
+        <p>A reading centred on your life's purpose, dharma, and soul evolution — exploring the nodes of the moon and the deeper calling written in your chart.</p>
+        <ul>
+          <li>Rahu &amp; Ketu — karmic axis analysis</li>
+          <li>Soul's evolutionary direction</li>
+          <li>Gifts brought from past lives</li>
+          <li>Practical guidance for alignment</li>
+        </ul>
+        <div class="arch-price-row"><span class="tag">Vedic Astrology</span><span class="price-amt">₹1,099</span></div>
+        <p class="arch-price-note">60 min · Birth details required</p>
+        <a href="contact.html" class="arch-link mt-2">Book This Reading <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="arch-card" id="relationship-synastry-reading" style="scroll-margin-top:6rem;">
+      <div class="arch-top photo">
+        <img src="images/photos/couple-starry-sky.jpg" alt="Illustration of a couple holding hands looking at a starry sky" loading="lazy">
+      </div>
+      <div class="arch-body">
+        <span class="card-eyebrow">✦ Relationships</span>
+        <h3>Relationship &amp; Synastry Reading</h3>
+        <p>Explore the cosmic dynamics between you and a partner, friend, or family member — understanding compatibility, karmic patterns, and soul contracts.</p>
+        <ul>
+          <li>Synastry &amp; composite chart analysis</li>
+          <li>Karmic ties &amp; past-life connections</li>
+          <li>Compatibility &amp; growth potential</li>
+          <li>Practical relationship guidance</li>
+        </ul>
+        <div class="arch-price-row"><span class="tag">Relationships</span><span class="price-amt">₹1,299</span></div>
+        <p class="arch-price-note">60 min · Both birth charts required</p>
+        <a href="contact.html" class="arch-link mt-2">Book This Reading <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="arch-card" id="marriage-karmic-compatibility" style="scroll-margin-top:6rem;">
+      <div class="arch-top photo">
+        <img src="images/photos/silhouette-couple.jpg" alt="Silhouette of a couple forming a heart shape with their hands against a purple sky" loading="lazy" style="filter:hue-rotate(265deg) saturate(1.1);">
+      </div>
+      <div class="arch-body">
+        <span class="card-eyebrow">♀ Marriage · Vedic</span>
+        <h3>Marriage &amp; Karmic Compatibility</h3>
+        <p>A detailed compatibility reading for couples considering marriage — exploring Ashtakoot matching, karmic bonds, and the long-term potential of the union.</p>
+        <ul>
+          <li>Ashtakoot &amp; Guna matching</li>
+          <li>Karmic &amp; dharmic compatibility</li>
+          <li>Timing &amp; auspicious periods</li>
+          <li>Long-term relationship themes</li>
+        </ul>
+        <div class="arch-price-row"><span class="tag">Marriage · Vedic</span><span class="price-amt">₹1,499</span></div>
+        <p class="arch-price-note">90 min · Both birth charts required</p>
+        <a href="contact.html" class="arch-link mt-2">Book This Reading <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="arch-card" id="gift-a-session" style="scroll-margin-top:6rem;">
+      <div class="arch-top photo">
+        <img src="images/photos/gift-ribbon.jpg" alt="A wrapped gift tied with a red ribbon" loading="lazy">
+      </div>
+      <div class="arch-body">
+        <span class="card-eyebrow">✦ For Someone Special</span>
+        <h3>Gift a Session</h3>
+        <p>Any reading above is available as a paid gift. Mention it in your booking message and I'll send a beautiful gift confirmation for you to share with them.</p>
+        <a href="contact.html" class="arch-link mt-2">Enquire About a Gift <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="center" style="color:var(--ink-faint);font-size:0.85rem;margin-top:1.6rem;">All readings include a follow-up Q&amp;A window via WhatsApp within 24 hours of the session. Payment details are shared upon booking confirmation.</p>
+</section>
+
+<section class="paper panel-tight center">
+  <div class="wrap">
+    <h2>Ready When You Are</h2>
+    <p class="dek" style="font-size:1rem;">All sessions are held online via Zoom or Google Meet unless you choose an in-person option. Payment details are shared upon booking confirmation.</p>
+    <p class="mt-2"><a href="contact.html" class="btn btn-gold">Book a Session →</a></p>
+  </div>
+</section>
+
+<section class="paper panel">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Process</span>
+      <h2>How a Session Works</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="arch-card" style="border-width:1px;"><div class="arch-body" style="padding-top:2rem;"><span class="card-eyebrow">01</span><h3>Book, Pay &amp; Share Your Details</h3><p>Fill out the contact form with your preferred service and birth details. Once I confirm availability, you'll receive payment details.</p></div></div>
+      <div class="arch-card" style="border-width:1px;"><div class="arch-body" style="padding-top:2rem;"><span class="card-eyebrow">02</span><h3>I Prepare Your Reading</h3><p>Before our session, I spend time with your chart or selected tarot spread — arriving fully prepared so our time together is rich and focused.</p></div></div>
+      <div class="arch-card" style="border-width:1px;"><div class="arch-body" style="padding-top:2rem;"><span class="card-eyebrow">03</span><h3>We Meet Online</h3><p>Sessions are held via Zoom or Google Meet. I hold the space with warmth and depth — this is a conversation, not a performance.</p></div></div>
+      <div class="arch-card" style="border-width:1px;"><div class="arch-body" style="padding-top:2rem;"><span class="card-eyebrow">04</span><h3>You Receive a Recording &amp; Notes</h3><p>Sessions are recorded so you can return to them, along with any relevant charts or written notes.</p></div></div>
     </div>
   </div>
 </section>
 
-<div class="how-section">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-eyebrow">The Process</div>
-    <h2 class="section-title">How a Session Works</h2>
+<section class="paper panel">
+  <div class="wrap">
+    <div class="section-head">
+      <img src="images/illustrations/testimonials.svg" alt="" loading="lazy" style="width:100%;max-width:220px;margin:0 auto 1.5rem;">
+      <span class="eyebrow">Kind Words</span>
+      <h2>What Clients Say</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="quote-card"><div class="quote-stars" aria-hidden="true">★★★★★</div><blockquote>&ldquo;First reading ever, not because I'm skeptical but because I've always believed in sharing my energy with the right person. Rushali did that for me. She created a safe space that held my doubts and fears with explanation.&rdquo;</blockquote><cite><span class="quote-avatar">L</span><span class="quote-name">Lavina</span></cite></div>
+      <div class="quote-card"><div class="quote-stars" aria-hidden="true">★★★★★</div><blockquote>&ldquo;The reading was surprisingly accurate and made sense in hindsight when I had reached a new point in my life.&rdquo;</blockquote><cite><span class="quote-avatar">D</span><span class="quote-name">Diandra</span></cite></div>
+      <div class="quote-card"><div class="quote-stars" aria-hidden="true">★★★★★</div><blockquote>&ldquo;It was my first time getting my tarot cards read, and rest assured, the experience was eye-opening. Rushali gave me some pretty on-point insights regarding my finances &amp; relationship, and those in turn gave me clarity on what to do.&rdquo;</blockquote><cite><span class="quote-avatar">N</span><span class="quote-name">Navdeep Singh Gaur</span></cite></div>
+    </div>
+    <p class="center mt-3">
+      <a href="testimonials.html" class="btn btn-outline-paper">View All Testimonials</a>
+      <a href="contact.html" class="btn btn-gold">Book Your Session →</a>
+    </p>
   </div>
-  <div class="how-steps">
-    <div class="how-step fade-in">
-      <div class="step-num">01</div>
-      <div class="step-content">
-        <h3>Book, Pay &amp; Share Your Details</h3>
-        <p>Fill out the contact form with your preferred service and birth details. Once I confirm availability, you'll receive payment details. Sessions are confirmed upon receipt of payment.</p>
-      </div>
-    </div>
-    <div class="how-step fade-in">
-      <div class="step-num">02</div>
-      <div class="step-content">
-        <h3>I Prepare Your Reading</h3>
-        <p>Before our session, I spend time with your chart or selected tarot spread — arriving fully prepared so our time together is rich and focused.</p>
-      </div>
-    </div>
-    <div class="how-step fade-in">
-      <div class="step-num">03</div>
-      <div class="step-content">
-        <h3>We Meet Online</h3>
-        <p>Sessions are held via Zoom or Google Meet. I hold the space with warmth and depth — this is a conversation, not a performance.</p>
-      </div>
-    </div>
-    <div class="how-step fade-in">
-      <div class="step-num">04</div>
-      <div class="step-content">
-        <h3>You Receive a Recording &amp; Notes</h3>
-        <p>Sessions are recorded so you can return to them. You'll also receive any relevant charts or written notes to support your integration.</p>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
-<div class="testimonials-section">
-  <div style="max-width:1100px;margin:0 auto;text-align:center;">
-    <div class="section-eyebrow" style="justify-content:center;">Kind Words</div>
-    <h2 class="section-title" style="text-align:center;">What Clients Say</h2>
+<section class="newsletter">
+  <div class="wrap">
+    <img src="images/illustrations/newsletter.svg" alt="" loading="lazy" style="width:100%;max-width:160px;margin:0 auto 1rem;">
+    <p class="eyebrow" style="color:var(--teal)">✦ Cosmic Letters</p>
+    <p style="color:var(--ink-dim);margin-top:0.6rem;">Monthly astrology &amp; tarot musings — arriving around the new moon.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/xwvyeqyp" method="POST">
+      <label for="newsletter-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+      <input type="email" id="newsletter-email" name="email" required placeholder="your@email.com">
+      <button type="submit" class="btn btn-gold">Subscribe</button>
+    </form>
   </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card fade-in" style="opacity:0.55;border-style:dashed;">
-      <span class="stars">★★★★★</span>
-      <p class="testimonial-text" style="font-style:normal;color:var(--ink-faint);">[Client testimonial coming soon — replace this with a real quote]</p>
-      <span class="testimonial-author" style="color:var(--ink-faint);">— Client Name, City</span>
-    </div>
-    <div class="testimonial-card fade-in" style="opacity:0.55;border-style:dashed;">
-      <span class="stars">★★★★★</span>
-      <p class="testimonial-text" style="font-style:normal;color:var(--ink-faint);">[Client testimonial coming soon — replace this with a real quote]</p>
-      <span class="testimonial-author" style="color:var(--ink-faint);">— Client Name, City</span>
-    </div>
-    <div class="testimonial-card fade-in" style="opacity:0.55;border-style:dashed;">
-      <span class="stars">★★★★★</span>
-      <p class="testimonial-text" style="font-style:normal;color:var(--ink-faint);">[Client testimonial coming soon — replace this with a real quote]</p>
-      <span class="testimonial-author" style="color:var(--ink-faint);">— Client Name, City</span>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:3rem;">
-    <a href="contact.html" class="btn-primary">Book Your Session</a>
-  </div>
-</div>
+</section>
 
-<script>document.write(getNewsletterBar() + getFooter() + getWhatsApp());</script>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;flex-shrink:0;color:var(--gold-light);">
+            <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="30" cy="30" r="19" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.6"/>
+            <circle cx="30" cy="11" r="2.3" fill="currentColor"/>
+            <circle cx="42.21" cy="15.45" r="2.3" fill="currentColor"/>
+            <circle cx="48.71" cy="26.70" r="2.3" fill="currentColor"/>
+            <circle cx="46.45" cy="39.50" r="2.3" fill="currentColor"/>
+            <circle cx="36.50" cy="47.85" r="2.3" fill="currentColor"/>
+            <circle cx="23.50" cy="47.85" r="2.3" fill="currentColor"/>
+            <circle cx="13.55" cy="39.50" r="2.3" fill="currentColor"/>
+            <circle cx="11.29" cy="26.70" r="2.3" fill="currentColor"/>
+            <circle cx="17.79" cy="15.45" r="2.3" fill="currentColor"/>
+            <circle cx="30" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="30" cy="30" r="1.5" fill="currentColor"/>
+            <path d="M30,21.5 L30,19 M38.5,30 L41,30 M30,38.5 L30,41 M21.5,30 L19,30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--cream);">Navgraha Shakha</p>
+        </div>
+        <p style="font-family:var(--font-mono);font-size:0.68rem;color:var(--cream-faint);margin-top:0.4rem;">by Rushali Thukral</p>
+        <p class="eyebrow" style="margin-top:0.6rem;">Astrology · Tarot · Spiritual Coaching</p>
+        <ul style="margin-top:1.5rem;list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem;">
+          <li><a href="mailto:navgrahashakha@gmail.com">navgrahashakha@gmail.com</a></li>
+          <li><a href="tel:+917758837418">+91 77588 37418</a></li>
+          <li>Goa, India · Sessions via Zoom &amp; Google Meet</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Connect</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find Me</h4>
+        <ul>
+          <li><a href="https://instagram.com/navgrahashakha" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://youtube.com/@navgrahashakha" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://wa.me/917758837418" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-disclaimer">The content on this website — including readings, articles, and any related communication — is offered for entertainment, educational, and general self-reflection purposes only. It is not a substitute for professional legal, medical, financial, or mental-health advice, diagnosis, or treatment, and should not be relied or acted upon as such. Please consult a qualified professional about your specific situation before making decisions based on anything read here. Using this website or its content does not create any advisory, fiduciary, or professional relationship, and no liability is assumed for actions taken on the basis of information provided.</p>
+    <p class="footer-copyright">© 2026 Navgraha Shakha by Rushali Thukral · All Rights Reserved</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
