@@ -81,6 +81,22 @@
 
   emailInput.addEventListener('blur', validateEmail);
 
+  const serviceSelect = form.querySelector('#service');
+  const dobInput = form.querySelector('#date_of_birth');
+  const dobReq = form.querySelector('#dob-req');
+
+  function updateBirthRequirement() {
+    const selected = serviceSelect.selectedOptions[0];
+    const category = selected && selected.parentElement.tagName === 'OPTGROUP'
+      ? selected.parentElement.dataset.category
+      : null;
+    const isAstrology = category === 'astrology';
+    dobInput.required = isAstrology;
+    if (dobReq) dobReq.hidden = !isAstrology;
+  }
+  serviceSelect.addEventListener('change', updateBirthRequirement);
+  updateBirthRequirement();
+
   form.addEventListener('submit', async (e) => {
     if (!form.checkValidity()) {
       form.reportValidity();
