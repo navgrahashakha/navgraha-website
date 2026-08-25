@@ -84,6 +84,8 @@
   const serviceSelect = form.querySelector('#service');
   const dobInput = form.querySelector('#date_of_birth');
   const dobReq = form.querySelector('#dob-req');
+  const tobInput = form.querySelector('#time_of_birth');
+  const tobReq = form.querySelector('#tob-req');
 
   function updateBirthRequirement() {
     const selected = serviceSelect.selectedOptions[0];
@@ -92,7 +94,9 @@
       : null;
     const isAstrology = category === 'astrology';
     dobInput.required = isAstrology;
+    tobInput.required = isAstrology;
     if (dobReq) dobReq.hidden = !isAstrology;
+    if (tobReq) tobReq.hidden = !isAstrology;
   }
   serviceSelect.addEventListener('change', updateBirthRequirement);
   updateBirthRequirement();
