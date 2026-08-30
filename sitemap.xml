@@ -49,6 +49,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://navgrahashakha.com/tarot-card-meanings.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://navgrahashakha.com/tarot-card-meanings-major-arcana.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://navgrahashakha.com/blog.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>

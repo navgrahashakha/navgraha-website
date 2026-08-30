@@ -1190,6 +1190,43 @@ a.journal-row-link:hover h3 { color: var(--teal); }
   margin-bottom: 1.4rem;
 }
 .post-body h2 { font-size: 1.4rem; margin: 2.4rem 0 1rem; }
+.glossary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+@media (min-width: 700px) {
+  .glossary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.glossary-card {
+  background: var(--paper-card);
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  padding: 1.5rem;
+  scroll-margin-top: 6rem;
+}
+.glossary-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+.glossary-keywords {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--teal);
+  margin-bottom: 0.25rem;
+}
+.glossary-keywords.reversed { color: var(--ink-faint); }
+.glossary-card p.glossary-desc {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  margin-top: 0.7rem;
+  line-height: 1.6;
+}
+.glossary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
 .post-body blockquote {
   font-family: var(--font-display);
   font-style: italic;
