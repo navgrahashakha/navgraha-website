@@ -75,6 +75,43 @@
     return ((rashiIndex - ascRashiIndex + 12) % 12) + 1;
   }
 
+  // Exaltation/debilitation only applies to the 7 classical grahas (Sun-Saturn) -- Rahu/Ketu
+  // exaltation points are not agreed upon across traditions, so they are deliberately left out.
+  const EXALTATION_RASHI = { Sun: 0, Moon: 1, Mars: 9, Mercury: 5, Jupiter: 3, Venus: 11, Saturn: 6 };
+
+  function dignityFor(planetName, rashiIndex) {
+    const exalt = EXALTATION_RASHI[planetName];
+    if (exalt === undefined) return null;
+    if (rashiIndex === exalt) return 'exalted';
+    if (rashiIndex === (exalt + 6) % 12) return 'debilitated';
+    return null;
+  }
+
+  // Standard BPHS combustion orbs (direct-motion values), degrees from the Sun.
+  const COMBUSTION_ORB = { Moon: 12, Mars: 17, Mercury: 14, Jupiter: 11, Venus: 10, Saturn: 15 };
+
+  function isCombust(planetName, planetSid, sunSid) {
+    const orb = COMBUSTION_ORB[planetName];
+    if (orb === undefined) return false;
+    let diff = Math.abs(planetSid - sunSid) % 360;
+    if (diff > 180) diff = 360 - diff;
+    return diff <= orb;
+  }
+
+  // Navamsa (D9): each 30 deg sign divided into 9 parts of 3d20'. Fire signs start their
+  // navamsa count from Aries, Earth from Capricorn, Air from Libra, Water from Cancer.
+  function navamsaRashiIndex(rashiIndex, degreeInSign) {
+    const amsaIndex = Math.floor(degreeInSign / (30 / 9)); // 0-8
+    return (rashiIndex * 9 + amsaIndex) % 12;
+  }
+
+  function degToDegMin(deg) {
+    const d = Math.floor(deg);
+    const m = Math.round((deg - d) * 60);
+    if (m === 60) return (d + 1) + '°00\'';
+    return d + '°' + String(m).padStart(2, '0') + '\'';
+  }
+
   function computeChart(date, latDeg, lonDeg) {
     const ayanamsa = lahiriAyanamsa(date);
     const bodyList = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
@@ -110,15 +147,28 @@
       degreeInSign: ketuInfo.degreeInSign, house: houseFromRashi(ketuInfo.rashiIndex, ascInfo.rashiIndex)
     };
 
+    // Dignity, combustion, and Vargottama (D1 sign === D9 Navamsa sign)
+    const sunSid = planets['Sun'].sidereal;
+    for (const [name, p] of Object.entries(planets)) {
+      p.dignity = dignityFor(name, p.rashiIndex);
+      p.combust = name === 'Sun' ? false : isCombust(name, p.sidereal, sunSid);
+      p.navamsaRashiIndex = navamsaRashiIndex(p.rashiIndex, p.degreeInSign);
+      p.vargottama = p.navamsaRashiIndex === p.rashiIndex;
+      p.degreeDisplay = degToDegMin(p.degreeInSign);
+    }
+
     const moonNak = siderealToNakshatra(planets['Moon'].sidereal);
 
     return {
       ayanamsa,
-      ascendant: { sidereal: ascSid, rashi: ascInfo.rashi, rashiIndex: ascInfo.rashiIndex, degreeInSign: ascInfo.degreeInSign },
+      ascendant: { sidereal: ascSid, rashi: ascInfo.rashi, rashiIndex: ascInfo.rashiIndex, degreeInSign: ascInfo.degreeInSign, degreeDisplay: degToDegMin(ascInfo.degreeInSign) },
       planets,
       moonNakshatra: moonNak
     };
   }
 
-  global.BirthChartEngine = { computeChart, siderealToRashi, siderealToNakshatra, normalize360, RASHIS, NAKSHATRAS };
+  global.BirthChartEngine = {
+    computeChart, siderealToRashi, siderealToNakshatra, normalize360, houseFromRashi, degToDegMin,
+    navamsaRashiIndex, RASHIS, NAKSHATRAS
+  };
 })(window);

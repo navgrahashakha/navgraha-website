@@ -227,11 +227,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p id="result-place-note" style="color:var(--ink-faint);font-size:0.82rem;margin-top:0.4rem;"></p>
     </div>
 
-    <div id="chart-grid" class="south-indian-chart"></div>
+    <fieldset style="border:none;padding:0;margin-bottom:1.3rem;display:flex;gap:1.3rem;justify-content:center;">
+      <legend style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-faint);text-align:center;width:100%;margin-bottom:0.6rem;">Chart Style</legend>
+      <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;"><input type="radio" name="chart-style" value="south" checked> South Indian</label>
+      <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;"><input type="radio" name="chart-style" value="north"> North Indian</label>
+    </fieldset>
+
+    <div id="chart-grid"></div>
 
     <div id="planet-table-container"></div>
 
-    <p style="color:var(--ink-faint);font-size:0.8rem;margin-top:1.5rem;">This is an automated approximate calculation for informational and entertainment purposes. For guidance on what your chart actually means for your life, book a full reading below.</p>
+    <p style="color:var(--ink-faint);font-size:0.78rem;margin-top:1rem;line-height:1.6;"><strong>Exalted</strong>: the planet is at its point of maximum classical strength. <strong>Debilitated</strong>: its point of weakest classical strength. <strong>Combust</strong>: too close to the Sun to express itself clearly. <strong>Vargottama</strong>: the planet holds the same sign in both the birth chart and the Navamsa (D9) chart, a mark of stability.</p>
+
+    <p style="color:var(--ink-faint);font-size:0.8rem;margin-top:1.2rem;">This is an automated approximate calculation for informational and entertainment purposes. For guidance on what your chart actually means for your life, book a full reading below.</p>
 
     <p class="center mt-3"><a href="birth-chart-reading.html" class="btn btn-gold">Book a Full Birth Chart Reading →</a></p>
   </div>
