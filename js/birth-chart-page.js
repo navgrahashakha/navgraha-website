@@ -269,29 +269,78 @@
     return style === 'north' ? renderNorthIndian(chart) : renderSouthIndian(chart);
   }
 
-  // ---------- Planet table with dignity / combustion / Vargottama ----------
+  const PLANET_ORDER = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn', 'Rahu', 'Ketu'];
+
+  // ---------- Planet table with dignity / combustion / retrograde / Vargottama / Nakshatra ----------
   function renderPlanetTable(chart) {
-    const order = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn', 'Rahu', 'Ketu'];
     function notes(p) {
       const tags = [];
       if (p.dignity === 'exalted') tags.push('<span style="color:var(--teal);">Exalted</span>');
       if (p.dignity === 'debilitated') tags.push('<span style="color:var(--ink-faint);">Debilitated</span>');
       if (p.combust) tags.push('<span style="color:var(--ink-faint);">Combust</span>');
+      if (p.retrograde) tags.push('<span style="color:var(--rose);">Retrograde</span>');
       if (p.vargottama) tags.push('<span style="color:var(--gold);">Vargottama</span>');
       return tags.length ? tags.join(', ') : '&mdash;';
     }
-    let rows = '<tr><td>Ascendant (Lagna)</td><td class="num">' + chart.ascendant.rashi + '</td><td class="num">' + chart.ascendant.degreeDisplay + '</td><td class="num">1</td><td>&mdash;</td></tr>';
-    for (const name of order) {
-      const d = chart.planets[name];
-      rows += '<tr><td>' + name + '</td><td class="num">' + d.rashi + '</td><td class="num">' + d.degreeDisplay + '</td><td class="num">' + d.house + '</td><td>' + notes(d) + '</td></tr>';
+    function degCell(p) {
+      return p.degreeDisplay + (p.retrograde ? ' <span title="Retrograde">℞</span>' : '');
     }
-    return '<table class="planet-table"><thead><tr><th>Planet</th><th>Sign</th><th>Degree</th><th>House</th><th>Notes</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    let rows = '<tr><td>Ascendant (Lagna)</td><td class="num">' + chart.ascendant.rashi + '</td><td class="num">' + chart.ascendant.degreeDisplay + '</td>'
+      + '<td class="num">' + chart.ascendant.nakshatra + ' (P' + chart.ascendant.nakshatraPada + ')</td><td class="num">1</td><td>&mdash;</td></tr>';
+    for (const name of PLANET_ORDER) {
+      const d = chart.planets[name];
+      rows += '<tr><td>' + name + '</td><td class="num">' + d.rashi + '</td><td class="num">' + degCell(d) + '</td>'
+        + '<td class="num">' + d.nakshatra + ' (P' + d.nakshatraPada + ')</td><td class="num">' + d.house + '</td><td>' + notes(d) + '</td></tr>';
+    }
+    return '<table class="planet-table"><thead><tr><th>Planet</th><th>Sign</th><th>Degree</th><th>Nakshatra</th><th>House</th><th>Notes</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  // ---------- Navamsa (D9) summary table ----------
+  function renderNavamsaTable(chart) {
+    let rows = '<tr><td>Ascendant (Lagna)</td><td class="num">' + chart.navamsa.ascendant.rashi + '</td><td class="num">1</td><td>&mdash;</td></tr>';
+    for (const name of PLANET_ORDER) {
+      const d1 = chart.planets[name];
+      const d9 = chart.navamsa.planets[name];
+      rows += '<tr><td>' + name + '</td><td class="num">' + d9.rashi + '</td><td class="num">' + d9.house + '</td>'
+        + '<td>' + (d1.vargottama ? '<span style="color:var(--gold);">Vargottama</span>' : '&mdash;') + '</td></tr>';
+    }
+    return '<table class="planet-table"><thead><tr><th>Planet</th><th>D9 Sign</th><th>D9 House</th><th>Notes</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  // ---------- Chara Karaka table ----------
+  const KARAKA_MEANINGS = {
+    Atmakaraka: 'Soul, self',
+    Amatyakaraka: 'Career, counsel',
+    Bhratrukaraka: 'Siblings, courage',
+    Matrukaraka: 'Mother, home',
+    Putrakaraka: 'Children, intelligence',
+    Gnatikaraka: 'Relatives, obstacles',
+    Darakaraka: 'Spouse, partnerships'
+  };
+  const KARAKA_ORDER = ['Atmakaraka', 'Amatyakaraka', 'Bhratrukaraka', 'Matrukaraka', 'Putrakaraka', 'Gnatikaraka', 'Darakaraka'];
+
+  function renderKarakaTable(chart) {
+    let rows = '';
+    for (const karaka of KARAKA_ORDER) {
+      rows += '<tr><td>' + karaka + '</td><td>' + KARAKA_MEANINGS[karaka] + '</td><td class="num">' + chart.charaKarakas[karaka] + '</td></tr>';
+    }
+    return '<table class="planet-table"><thead><tr><th>Karaka</th><th>Signifies</th><th>Planet</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  // ---------- House Nakshatra table (equal-house cusp method) ----------
+  function renderHouseNakshatraTable(chart) {
+    let rows = '';
+    for (const h of chart.houseNakshatras) {
+      rows += '<tr><td class="num">' + h.house + '</td><td>' + h.nakshatra + '</td><td class="num">Pada ' + h.pada + '</td></tr>';
+    }
+    return '<table class="planet-table"><thead><tr><th>House</th><th>Nakshatra</th><th>Pada</th></tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
   for (const radio of styleRadios) {
     radio.addEventListener('change', () => {
       if (!lastChart) return;
       document.getElementById('chart-grid').innerHTML = renderChart(lastChart, radio.value);
+      document.getElementById('navamsa-grid').innerHTML = renderChart(lastChart.navamsa, radio.value);
     });
   }
 
@@ -354,12 +403,16 @@
     const selectedStyle = document.querySelector('input[name="chart-style"]:checked').value;
 
     document.getElementById('result-summary').innerHTML =
-      '<strong>Ascendant (Lagna):</strong> ' + chart.ascendant.rashi + ' &middot; '
+      '<strong>Ascendant (Lagna):</strong> ' + chart.ascendant.rashi + ' (' + chart.ascendant.nakshatra + ') &middot; '
       + '<strong>Moon Sign:</strong> ' + chart.planets.Moon.rashi + ' &middot; '
-      + '<strong>Nakshatra:</strong> ' + nak.nakshatra + ' (Pada ' + nak.pada + ')';
+      + '<strong>Moon Nakshatra:</strong> ' + nak.nakshatra + ' (Pada ' + nak.pada + ')';
     document.getElementById('result-place-note').textContent = 'Calculated for ' + placeLabel + ', using the Lahiri ayanamsa and Whole Sign houses.';
     document.getElementById('chart-grid').innerHTML = renderChart(chart, selectedStyle);
     document.getElementById('planet-table-container').innerHTML = renderPlanetTable(chart);
+    document.getElementById('navamsa-grid').innerHTML = renderChart(chart.navamsa, selectedStyle);
+    document.getElementById('navamsa-table-container').innerHTML = renderNavamsaTable(chart);
+    document.getElementById('karaka-table-container').innerHTML = renderKarakaTable(chart);
+    document.getElementById('house-nakshatra-container').innerHTML = renderHouseNakshatraTable(chart);
 
     resultsSection.hidden = false;
     resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });

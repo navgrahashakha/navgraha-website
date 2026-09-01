@@ -7,6 +7,9 @@
 //  - Mesha Sankranti (Sun sidereal ingress into Aries, ~Apr 14 every year)
 //  - Ascendant at local sunrise matches the Sun's own sidereal longitude to ~1 deg
 //  - Mean lunar node (Rahu) retrograde rate matches the theoretical 18.6-year cycle (~19.35 deg/year)
+//  - Retrograde detection matches real published stations: Mercury direct on 2026-10-20,
+//    retrograde on 2026-11-01, direct again by 2026-12-01 (Oct 24 - Nov 13 2026 window);
+//    Mars retrograde through 2022-12-01, direct by 2023-03-01 (Oct 30 2022 - Jan 12 2023 window)
 
 (function (global) {
   const RASHIS = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
@@ -112,6 +115,38 @@
     return d + '°' + String(m).padStart(2, '0') + '\'';
   }
 
+  // Retrograde: compares tropical longitude now vs +1 day. Direction of apparent motion is
+  // identical in tropical and sidereal (ayanamsa is a constant offset), so this needs no
+  // sidereal conversion. Sun and Moon are never retrograde; Rahu/Ketu (mean node) are treated
+  // as always retrograde by convention, matching standard Vedic practice.
+  function isRetrograde(planetName, date) {
+    if (planetName === 'Sun' || planetName === 'Moon') return false;
+    if (planetName === 'Rahu' || planetName === 'Ketu') return true;
+    const lon1 = getTropicalLongitude(planetName, date);
+    const later = new Date(date.getTime() + 86400000);
+    const lon2 = getTropicalLongitude(planetName, later);
+    let diff = lon2 - lon1;
+    if (diff > 180) diff -= 360;
+    if (diff < -180) diff += 360;
+    return diff < 0;
+  }
+
+  // Jaimini Sapta (7) Chara Karakas: the 7 classical planets ranked by degree-in-sign (0-30 deg),
+  // highest degree = Atmakaraka down to lowest = Darakaraka. Rahu/Ketu are deliberately excluded
+  // from this ranking -- whether/how to include the node in an 8th-Karaka scheme is disputed
+  // across traditions, same reasoning as excluding them from the exaltation table above.
+  const CHARA_KARAKA_NAMES = ['Atmakaraka', 'Amatyakaraka', 'Bhratrukaraka', 'Matrukaraka', 'Putrakaraka', 'Gnatikaraka', 'Darakaraka'];
+  const CHARA_KARAKA_PLANETS = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
+
+  function computeCharaKarakas(planets) {
+    const ranked = CHARA_KARAKA_PLANETS
+      .map(name => ({ name, deg: planets[name].degreeInSign }))
+      .sort((a, b) => b.deg - a.deg);
+    const result = {};
+    ranked.forEach((p, i) => { result[CHARA_KARAKA_NAMES[i]] = p.name; });
+    return result;
+  }
+
   function computeChart(date, latDeg, lonDeg) {
     const ayanamsa = lahiriAyanamsa(date);
     const bodyList = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
@@ -129,7 +164,8 @@
         rashi: rashiInfo.rashi,
         rashiIndex: rashiInfo.rashiIndex,
         degreeInSign: rashiInfo.degreeInSign,
-        house: houseFromRashi(rashiInfo.rashiIndex, ascInfo.rashiIndex)
+        house: houseFromRashi(rashiInfo.rashiIndex, ascInfo.rashiIndex),
+        retrograde: isRetrograde(b, date)
       };
     }
 
@@ -138,16 +174,18 @@
     const rahuInfo = siderealToRashi(rahuSid);
     planets['Rahu'] = {
       sidereal: rahuSid, rashi: rahuInfo.rashi, rashiIndex: rahuInfo.rashiIndex,
-      degreeInSign: rahuInfo.degreeInSign, house: houseFromRashi(rahuInfo.rashiIndex, ascInfo.rashiIndex)
+      degreeInSign: rahuInfo.degreeInSign, house: houseFromRashi(rahuInfo.rashiIndex, ascInfo.rashiIndex),
+      retrograde: true
     };
     const ketuSid = normalize360(rahuSid + 180);
     const ketuInfo = siderealToRashi(ketuSid);
     planets['Ketu'] = {
       sidereal: ketuSid, rashi: ketuInfo.rashi, rashiIndex: ketuInfo.rashiIndex,
-      degreeInSign: ketuInfo.degreeInSign, house: houseFromRashi(ketuInfo.rashiIndex, ascInfo.rashiIndex)
+      degreeInSign: ketuInfo.degreeInSign, house: houseFromRashi(ketuInfo.rashiIndex, ascInfo.rashiIndex),
+      retrograde: true
     };
 
-    // Dignity, combustion, and Vargottama (D1 sign === D9 Navamsa sign)
+    // Dignity, combustion, Vargottama (D1 sign === D9 Navamsa sign), and per-planet Nakshatra
     const sunSid = planets['Sun'].sidereal;
     for (const [name, p] of Object.entries(planets)) {
       p.dignity = dignityFor(name, p.rashiIndex);
@@ -155,20 +193,57 @@
       p.navamsaRashiIndex = navamsaRashiIndex(p.rashiIndex, p.degreeInSign);
       p.vargottama = p.navamsaRashiIndex === p.rashiIndex;
       p.degreeDisplay = degToDegMin(p.degreeInSign);
+      const nak = siderealToNakshatra(p.sidereal);
+      p.nakshatra = nak.nakshatra;
+      p.nakshatraPada = nak.pada;
     }
 
     const moonNak = siderealToNakshatra(planets['Moon'].sidereal);
+    const ascNavamsaRashiIndex = navamsaRashiIndex(ascInfo.rashiIndex, ascInfo.degreeInSign);
+    const ascNakshatra = siderealToNakshatra(ascSid);
+
+    // Navamsa (D9) chart: derived from each D1 planet's already-computed navamsaRashiIndex,
+    // re-housed relative to the Ascendant's own D9 position. Same Whole Sign house logic as D1.
+    const navamsaPlanets = {};
+    for (const [name, p] of Object.entries(planets)) {
+      navamsaPlanets[name] = {
+        rashiIndex: p.navamsaRashiIndex,
+        rashi: RASHIS[p.navamsaRashiIndex],
+        house: houseFromRashi(p.navamsaRashiIndex, ascNavamsaRashiIndex)
+      };
+    }
+
+    // House cusp Nakshatra: uses the equal-house cusp point (Ascendant degree + 30 deg per house),
+    // not the Whole Sign house's fixed sign start. This is the standard "Bhava Nakshatra" method --
+    // it varies with the exact Ascendant degree, unlike a Whole Sign cusp which would always fall in
+    // the same fixed nakshatra regardless of birth time. House 1's cusp nakshatra therefore always
+    // equals the Ascendant's own Nakshatra, which is a useful self-consistency check.
+    const houseNakshatras = [];
+    for (let h = 1; h <= 12; h++) {
+      const cuspSid = normalize360(ascSid + (h - 1) * 30);
+      const nak = siderealToNakshatra(cuspSid);
+      houseNakshatras.push({ house: h, nakshatra: nak.nakshatra, pada: nak.pada });
+    }
+
+    const charaKarakas = computeCharaKarakas(planets);
 
     return {
       ayanamsa,
-      ascendant: { sidereal: ascSid, rashi: ascInfo.rashi, rashiIndex: ascInfo.rashiIndex, degreeInSign: ascInfo.degreeInSign, degreeDisplay: degToDegMin(ascInfo.degreeInSign) },
+      ascendant: {
+        sidereal: ascSid, rashi: ascInfo.rashi, rashiIndex: ascInfo.rashiIndex, degreeInSign: ascInfo.degreeInSign,
+        degreeDisplay: degToDegMin(ascInfo.degreeInSign), navamsaRashiIndex: ascNavamsaRashiIndex,
+        nakshatra: ascNakshatra.nakshatra, nakshatraPada: ascNakshatra.pada
+      },
       planets,
-      moonNakshatra: moonNak
+      moonNakshatra: moonNak,
+      navamsa: { ascendant: { rashiIndex: ascNavamsaRashiIndex, rashi: RASHIS[ascNavamsaRashiIndex] }, planets: navamsaPlanets },
+      houseNakshatras,
+      charaKarakas
     };
   }
 
   global.BirthChartEngine = {
     computeChart, siderealToRashi, siderealToNakshatra, normalize360, houseFromRashi, degToDegMin,
-    navamsaRashiIndex, RASHIS, NAKSHATRAS
+    navamsaRashiIndex, isRetrograde, computeCharaKarakas, RASHIS, NAKSHATRAS
   };
 })(window);
