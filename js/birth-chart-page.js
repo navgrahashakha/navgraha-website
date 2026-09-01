@@ -72,6 +72,8 @@
     if (query.length < 2) { hideResults(); return; }
     const seq = ++searchSeq;
     searchDebounce = setTimeout(async () => {
+      locationResultsList.innerHTML = '<li class="is-empty">Searching…</li>';
+      locationResultsList.hidden = false;
       try {
         const results = await searchNominatim(query);
         if (seq !== searchSeq) return;
