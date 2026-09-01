@@ -1243,6 +1243,92 @@ a.journal-row-link:hover h3 { color: var(--teal); }
 .chart-form-row { display: grid; grid-template-columns: 1fr; gap: 1.3rem; }
 @media (min-width: 620px) { .chart-form-row.two-col { grid-template-columns: 1fr 1fr; } }
 
+.style-toggle { text-align: center; margin-bottom: 1.8rem; }
+.style-toggle-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.7rem;
+}
+.style-toggle-group {
+  display: inline-flex;
+  border: 1.5px solid var(--gold);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+.style-toggle-btn { position: relative; cursor: pointer; }
+.style-toggle-btn input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.style-toggle-btn span {
+  display: block;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink-dim);
+  transition: background 0.15s, color 0.15s;
+}
+.style-toggle-btn input:checked + span { background: var(--gold); color: var(--ink); }
+.style-toggle-btn input:focus-visible + span { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+/* ---------- Birth-place search combobox ---------- */
+.location-field { position: relative; }
+.location-results {
+  position: absolute;
+  z-index: 20;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.3rem;
+  background: var(--paper-card);
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(27, 22, 15, 0.14);
+  list-style: none;
+  max-height: 16rem;
+  overflow-y: auto;
+}
+.location-results li {
+  padding: 0.7rem 1rem;
+  font-size: 0.92rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--paper-line);
+}
+.location-results li:last-child { border-bottom: none; }
+.location-results li:hover,
+.location-results li.is-active { background: rgba(201, 154, 62, 0.14); }
+.location-results li.is-empty {
+  cursor: default;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+.location-results li:hover.is-empty { background: none; }
+.location-selected {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--teal);
+  font-weight: 500;
+}
+.location-manual-toggle {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.location-manual-toggle:hover { color: var(--teal); }
+.tz-auto-label { color: var(--teal); font-weight: 500; }
+
 .glossary-grid {
   display: grid;
   grid-template-columns: 1fr;

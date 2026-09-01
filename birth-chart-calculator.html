@@ -185,11 +185,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="field">
-        <label for="birth-location">Birth Place <span class="req">*</span></label>
-        <select id="birth-location" name="location" required>
-          <option value="">Select a city...</option>
-        </select>
+      <div class="field location-field">
+        <label for="location-search">Birth Place <span class="req">*</span></label>
+        <input type="text" id="location-search" autocomplete="off" placeholder="Start typing a city, town or village anywhere in the world...">
+        <ul id="location-results" class="location-results" hidden></ul>
+        <p id="location-selected" class="location-selected" hidden></p>
+        <button type="button" id="location-manual-toggle" class="location-manual-toggle">Can't find it? Enter coordinates manually</button>
       </div>
 
       <div id="manual-location-fields" hidden>
@@ -203,12 +204,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="number" id="manual-lon" step="0.0001" placeholder="e.g. 73.8278">
           </div>
         </div>
+        <div class="field">
+          <label for="manual-place-name">Place name (for display only)</label>
+          <input type="text" id="manual-place-name" placeholder="e.g. My Village, State, Country">
+        </div>
       </div>
 
       <div class="field">
         <label for="chart-tz">Time Zone at Birth (UTC offset) <span class="req">*</span></label>
         <input type="number" id="chart-tz" name="tz" step="0.5" value="5.5" required>
-        <p style="font-family:var(--font-mono);font-size:0.68rem;color:var(--ink-faint);margin-top:0.5rem;">India Standard Time is UTC+5.5. Auto-fills when you pick a city above, but you can override it.</p>
+        <p id="tz-helper" style="font-family:var(--font-mono);font-size:0.68rem;color:var(--ink-faint);margin-top:0.5rem;">Pick a birth place and date above — the correct UTC offset (e.g. "UTC+5:30 &middot; Asia/Kolkata") fills in automatically, including historical DST. Not sure your place resolved right? You can always override the number yourself.</p>
       </div>
 
       <div id="chart-error" class="field-error" style="margin-bottom:1rem;" hidden></div>
@@ -227,11 +232,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p id="result-place-note" style="color:var(--ink-faint);font-size:0.82rem;margin-top:0.4rem;"></p>
     </div>
 
-    <fieldset style="border:none;padding:0;margin-bottom:1.3rem;display:flex;gap:1.3rem;justify-content:center;">
-      <legend style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-faint);text-align:center;width:100%;margin-bottom:0.6rem;">Chart Style</legend>
-      <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;"><input type="radio" name="chart-style" value="south" checked> South Indian</label>
-      <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;"><input type="radio" name="chart-style" value="north"> North Indian</label>
-    </fieldset>
+    <div class="style-toggle">
+      <span class="style-toggle-title">Chart Style</span>
+      <div class="style-toggle-group">
+        <label class="style-toggle-btn"><input type="radio" name="chart-style" value="south" checked><span>South Indian</span></label>
+        <label class="style-toggle-btn"><input type="radio" name="chart-style" value="north"><span>North Indian</span></label>
+      </div>
+    </div>
 
     <div id="chart-grid"></div>
 
@@ -356,6 +363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script src="js/astronomy-engine.min.js"></script>
+<script src="js/tz-lookup.js"></script>
 <script src="js/birth-chart-locations.js"></script>
 <script src="js/birth-chart-engine.js"></script>
 <script src="js/birth-chart-page.js"></script>

@@ -2,33 +2,174 @@
   const form = document.getElementById('chart-form');
   if (!form) return;
 
-  const locationSelect = document.getElementById('birth-location');
+  const locationSearchInput = document.getElementById('location-search');
+  const locationResultsList = document.getElementById('location-results');
+  const locationSelectedP = document.getElementById('location-selected');
+  const manualToggleBtn = document.getElementById('location-manual-toggle');
   const manualFields = document.getElementById('manual-location-fields');
+  const manualLat = document.getElementById('manual-lat');
+  const manualLon = document.getElementById('manual-lon');
+  const manualPlaceName = document.getElementById('manual-place-name');
+  const tzInput = document.getElementById('chart-tz');
+  const tzHelper = document.getElementById('tz-helper');
+  const dobInput = document.getElementById('chart-dob');
+  const tobInput = document.getElementById('chart-tob');
   const resultsSection = document.getElementById('chart-results');
   const errorBox = document.getElementById('chart-error');
   const styleRadios = document.querySelectorAll('input[name="chart-style"]');
 
   let lastChart = null;
+  let selectedLocation = null; // { lat, lon, label }
+  let manualMode = false;
 
-  // Populate location dropdown
-  const locations = window.BIRTH_CHART_LOCATIONS || [];
-  for (const loc of locations) {
-    const opt = document.createElement('option');
-    opt.value = loc.name;
-    opt.textContent = loc.name;
-    locationSelect.appendChild(opt);
+  // ---------- Birth-place search (OpenStreetMap Nominatim, with an offline fallback) ----------
+  const localLocations = window.BIRTH_CHART_LOCATIONS || [];
+  let searchDebounce = null;
+  let searchSeq = 0;
+
+  function hideResults() {
+    locationResultsList.hidden = true;
+    locationResultsList.innerHTML = '';
   }
-  const otherOpt = document.createElement('option');
-  otherOpt.value = '__other__';
-  otherOpt.textContent = 'Other (enter coordinates manually)';
-  locationSelect.appendChild(otherOpt);
 
-  const tzInput = document.getElementById('chart-tz');
-  locationSelect.addEventListener('change', () => {
-    manualFields.hidden = locationSelect.value !== '__other__';
-    const loc = locations.find(l => l.name === locationSelect.value);
-    if (loc) tzInput.value = loc.tz;
+  function renderResults(items, note) {
+    if (!items.length) {
+      locationResultsList.innerHTML = '<li class="is-empty">No matches found. Try a different spelling, or enter coordinates manually below.</li>';
+      locationResultsList.hidden = false;
+      return;
+    }
+    locationResultsList.innerHTML = items.map((item, i) =>
+      '<li data-i="' + i + '">' + item.label + (note ? ' <span style="opacity:.6;">' + note + '</span>' : '') + '</li>'
+    ).join('');
+    locationResultsList.hidden = false;
+    Array.from(locationResultsList.children).forEach((li, i) => {
+      if (!items[i]) return;
+      li.addEventListener('click', () => selectLocation(items[i].lat, items[i].lon, items[i].label));
+    });
+  }
+
+  function searchLocalFallback(query) {
+    const q = query.toLowerCase();
+    return localLocations
+      .filter(l => l.name.toLowerCase().includes(q))
+      .slice(0, 8)
+      .map(l => ({ lat: l.lat, lon: l.lon, label: l.name }));
+  }
+
+  async function searchNominatim(query) {
+    const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=8&q=' + encodeURIComponent(query);
+    const res = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+    if (!res.ok) throw new Error('Nominatim request failed');
+    const data = await res.json();
+    return data.map(d => ({ lat: parseFloat(d.lat), lon: parseFloat(d.lon), label: d.display_name }));
+  }
+
+  locationSearchInput.addEventListener('input', () => {
+    selectedLocation = null;
+    locationSelectedP.hidden = true;
+    const query = locationSearchInput.value.trim();
+    clearTimeout(searchDebounce);
+    if (query.length < 2) { hideResults(); return; }
+    const seq = ++searchSeq;
+    searchDebounce = setTimeout(async () => {
+      try {
+        const results = await searchNominatim(query);
+        if (seq !== searchSeq) return;
+        renderResults(results.length ? results : searchLocalFallback(query));
+      } catch (e) {
+        if (seq !== searchSeq) return;
+        renderResults(searchLocalFallback(query), '(offline list)');
+      }
+    }, 450);
   });
+
+  locationSearchInput.addEventListener('focus', () => {
+    if (locationResultsList.children.length && !selectedLocation) locationResultsList.hidden = false;
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.location-field')) hideResults();
+  });
+
+  function selectLocation(lat, lon, label) {
+    selectedLocation = { lat: parseFloat(lat), lon: parseFloat(lon), label };
+    locationSearchInput.value = label;
+    hideResults();
+    locationSelectedP.textContent = '✓ ' + label + '  (' + selectedLocation.lat.toFixed(4) + ', ' + selectedLocation.lon.toFixed(4) + ')';
+    locationSelectedP.hidden = false;
+    resolveTimezone();
+  }
+
+  // ---------- Manual coordinate fallback (locations Nominatim can't resolve) ----------
+  manualToggleBtn.addEventListener('click', () => {
+    manualMode = !manualMode;
+    manualFields.hidden = !manualMode;
+    manualToggleBtn.textContent = manualMode ? 'Use the place search instead' : "Can't find it? Enter coordinates manually";
+    if (manualMode) resolveTimezone();
+  });
+  manualLat.addEventListener('input', resolveTimezone);
+  manualLon.addEventListener('input', resolveTimezone);
+
+  // ---------- Timezone auto-resolution: tz-lookup (lat/lon -> IANA zone) + Intl (historical UTC offset) ----------
+  function currentCoords() {
+    if (manualMode) {
+      const lat = parseFloat(manualLat.value), lon = parseFloat(manualLon.value);
+      if (isNaN(lat) || isNaN(lon)) return null;
+      return { lat, lon };
+    }
+    return selectedLocation;
+  }
+
+  function formatOffsetLabel(hours) {
+    const sign = hours < 0 ? '-' : '+';
+    const abs = Math.abs(hours);
+    const h = Math.floor(abs);
+    const m = Math.round((abs - h) * 60);
+    return 'UTC' + sign + h + (m ? ':' + String(m).padStart(2, '0') : '');
+  }
+
+  function resolveTimezone() {
+    if (typeof tzlookup !== 'function' || !tzHelper) return;
+    const coords = currentCoords();
+    if (!coords) return;
+
+    let iana;
+    try {
+      iana = tzlookup(coords.lat, coords.lon);
+    } catch (e) {
+      return;
+    }
+
+    // Use the entered birth date/time (falls back to today) so the resolved offset reflects
+    // the DST rules actually in effect then, not today's rules.
+    let y, mo, d, h, mi;
+    if (dobInput.value && tobInput.value) {
+      [y, mo, d] = dobInput.value.split('-').map(Number);
+      [h, mi] = tobInput.value.split(':').map(Number);
+    } else {
+      const now = new Date();
+      y = now.getUTCFullYear(); mo = now.getUTCMonth() + 1; d = now.getUTCDate();
+      h = now.getUTCHours(); mi = now.getUTCMinutes();
+    }
+
+    let offsetHours;
+    try {
+      const instant = new Date(Date.UTC(y, mo - 1, d, h, mi));
+      const dtf = new Intl.DateTimeFormat('en-US', { timeZone: iana, timeZoneName: 'longOffset' });
+      const part = dtf.formatToParts(instant).find(p => p.type === 'timeZoneName').value; // e.g. "GMT+5:30"
+      const m = part.match(/GMT([+-])(\d+)(?::(\d+))?/);
+      if (!m) return;
+      offsetHours = (m[1] === '-' ? -1 : 1) * (parseInt(m[2], 10) + (m[3] ? parseInt(m[3], 10) : 0) / 60);
+    } catch (e) {
+      return;
+    }
+
+    tzInput.value = offsetHours;
+    tzHelper.innerHTML = 'Auto-detected: <span class="tz-auto-label">' + formatOffsetLabel(offsetHours) + ' &middot; ' + iana.replace(/_/g, ' ') + '</span> for this date (adjusts for daylight saving automatically). Looks wrong? Just type over the number above.';
+  }
+
+  dobInput.addEventListener('change', resolveTimezone);
+  tobInput.addEventListener('change', resolveTimezone);
 
   const ABBR = { Sun: 'Su', Moon: 'Mo', Mars: 'Ma', Mercury: 'Me', Jupiter: 'Ju', Venus: 'Ve', Saturn: 'Sa', Rahu: 'Ra', Ketu: 'Ke' };
 
@@ -96,7 +237,6 @@
   };
 
   function renderNorthIndian(chart) {
-    const engine = window.BirthChartEngine;
     const ascRashiIndex = chart.ascendant.rashiIndex;
 
     const planetsByHouse = {};
@@ -109,7 +249,6 @@
       + '<rect x="0" y="0" width="400" height="400" fill="var(--paper-card)" stroke="var(--paper-line)" />';
 
     for (let h = 1; h <= 12; h++) {
-      const rashiIdx = (ascRashiIndex + h - 1) % 12;
       const isAsc = h === 1;
       svg += '<polygon points="' + NORTH_HOUSE_POLY[h] + '" fill="' + (isAsc ? 'rgba(201,154,62,0.16)' : 'none') + '" stroke="var(--paper-line)" stroke-width="1.5" />';
     }
@@ -168,28 +307,27 @@
 
     const dobStr = document.getElementById('chart-dob').value;
     const tobStr = document.getElementById('chart-tob').value;
-    const tz = parseFloat(document.getElementById('chart-tz').value);
+    const tz = parseFloat(tzInput.value);
 
     let lat, lon, placeLabel;
-    if (locationSelect.value === '__other__') {
-      lat = parseFloat(document.getElementById('manual-lat').value);
-      lon = parseFloat(document.getElementById('manual-lon').value);
-      placeLabel = 'your entered coordinates';
+    if (manualMode) {
+      lat = parseFloat(manualLat.value);
+      lon = parseFloat(manualLon.value);
+      placeLabel = manualPlaceName.value.trim() || 'your entered coordinates';
       if (isNaN(lat) || isNaN(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
         errorBox.textContent = 'Please enter a valid latitude (-90 to 90) and longitude (-180 to 180).';
         errorBox.hidden = false;
         return;
       }
     } else {
-      const loc = locations.find(l => l.name === locationSelect.value);
-      if (!loc) {
-        errorBox.textContent = 'Please select a birth location.';
+      if (!selectedLocation) {
+        errorBox.textContent = 'Please search for and select your birth place, or switch to manual coordinates.';
         errorBox.hidden = false;
         return;
       }
-      lat = loc.lat;
-      lon = loc.lon;
-      placeLabel = loc.name;
+      lat = selectedLocation.lat;
+      lon = selectedLocation.lon;
+      placeLabel = selectedLocation.label;
     }
 
     if (isNaN(tz) || tz < -12 || tz > 14) {
